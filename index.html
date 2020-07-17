@@ -1,339 +1,61 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="google-site-verification" content="L0PEgmsrFhxPf6ttHECba-PdYA_IFa_x2dlh4L_JhJM" />
-    <link rel="stylesheet" href="css/main.css">
-    <script src="js/main.js" defer></script>
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700|Lora" rel="stylesheet">
-    <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
-    <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
-    <meta name="generator" content="Unicorn Platform" />
-    <title>Mohanad Albughdadi</title>
-    <style>
-.dropbtn {
-  background-color: #3498DB;
-  color: white;
-  padding: 6px;
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
-}
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+  <base target="_blank">
+  <meta charset="UTF-8" />
+  <title>Mohanad Albughdadi</title>
+  <link rel="shortcut icon" type="image/png" href="assets/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous" type="text/css">
+  <link rel="stylesheet" href="assets/academicons-1.8.6/css/academicons.min.css"/>
+  <script type='text/javascript' src='js/jquery-1.11.1.min.js'></script>
+  <script type="text/javascript" src="js/jquery.particleground.js"></script>
+  <script type="text/javascript" src="js/demo.js"></script>
+  <!-- <script type="text/javascript" src="js/main.js"></script> -->
+</head>
 
-.dropbtn:hover, .dropbtn:focus {
-  background-color: #2980B9;
-}
+<body>
 
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f1f1f1;
-  min-width: 160px;
-  overflow: auto;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
-
-.dropdown a:hover {background-color: #ddd;}
-
-.dropdown-content a:hover {background-color: #ddd;}
-
-.dropdown:hover .dropdown-content {display: block;}
-
-.dropdown:hover .dropbtn {background-color: #3e8e41;}
-</style>
-  </head>
-  <body>
-<!-- START OF: Header 29 =====-->
-<header class="header-29" style="background-image: url(https://inteng-storage.s3.amazonaws.com/images/FEBRUARY/sizes/Artificial-Superintelligence-In-Control_resize_md.jpg)">
-  <div class="header-29__overlay"></div>
-  <!-- START OF: Nav 1 =====-->
   <nav class="nav-01">
-    <div class="container">
-      <div class="nav-01__box">
-        <div class="nav-01__logo"><a class="nav-01__link" href="javascript:void(0);" target="_blank">
-            <!--You can use image logo:-->
-            <a href="https://github.com/AlbughdadiM"><img class="nav-01__logo_img" src="img/logos/companies/GitHub-Mark-Light-32px.png" alt="Logo"/></a>
-            <!--Or uncomment this <span> to have a word-logo.-->
-            <!--span.nav-01__logo_text.white-text
-            | Unicorn
+  <div class="nav-01__link js-menu" onmouseover="document.getElementById('myDropdown').style.display = 'block';" onmouseout="document.getElementById('myDropdown').style.display = 'none';">
+  <ul class="nav-01__list">
+    <li class="nav-01__item"><a class="button   button--white-outline  button--empty " >
 
-            --></a></div>
-        <div class="nav-01__links js-menu">
-          <ul class="nav-01__list">
-            <li class="nav-01__item"><a class="button   button--white-outline  button--empty " href="about.html" target="_blank"><span>About</span></a>
-            </li>
-            <!-- <li class="nav-01__item"><a class="button   button--white-outline  button--empty " href="javascript:void(0);" target="_blank"><span>Features</span></a> -->
-            <!-- </li> -->
-            <!-- <li class="nav-01__item"><a class="button   button--white-outline  button--empty " href="javascript:void(0);" target="_blank"><span>Contact us</span></a> -->
-            <!-- </li> -->
-            <!-- <li class="nav-01__item"><a class="button   button--white-outline  button--empty "><span>Demo</span></a>
-            </li> -->
-<!--
-            <div class="nav-01__item dropdown">
-              <li class="nav-01__item"><a class="button   button--white-outline  button--empty "><span>Demo</span></a>
-                <div id="myDropdown" class="dropdown-content">
-                  <a href="test_map_parcel_S2.html" target="_blank">Parcel Delineation S2</a>
-                  <a href="test_map_parcel_spot.html" target="_blank">Parcel Delineation SPOT 6 Demo1</a>
-                  <a href="test_map_parcel_spot2.html" target="_blank">Parcel Delineation SPOT 6 Demo2</a>
-                  <a href="ImageOverlay_classif.html" target="_blank">LCLU Classification</a>
-                  <a href="ImageOverlay_change_detection.html" target="_blank">Change Detection in Vineyards Pixel-level</a>
-                  <a href="ImageOverlay_vignes_changes_vector.html" target="_blank">Change Detection in Vineyards Parcel-level</a>
-                  <a href="ImageOverlay_patch_classification.html" target="_blank">Semantic Patch Classification</a>
-                  <a href="#contact">Deep Learning LAI Estimation</a>
-                  <a href="#contact">Temporal Monitoring of Crops using S2</a>
-                  <a href="#contact">Hemodynamic Brain Parcellation in fMRI</a>
-                </div>
-                </div> -->
-            
-<!--             <div class="nav-01__item dropdown">
-                  <li class="nav-01__item"><a class="button   button--white-outline  button--empty "><span>Applications</span></a>
-                    <div id="myDropdown" class="dropdown-content">
-                      <a href="#contact">Parcel Delineation S2</a>
-                      <a href="#contact">Parcel Delineation SPOT 6 Demo1</a>
-                      <a href="#contact">Parcel Delineation SPOT 6 Demo2</a>
-                      <a href="#contact">LCLU Classification</a>
-                      <a href="#contact">Change Detection in Vineyards</a>
-                      <a href="#contact">Deep Learning LAI Estimation</a>
-                      <a href="#contact">Temporal Monitoring of Crops using S2</a>
-                      <a href="#contact">Hemodynamic Brain Parcellation in fMRI</a>
-                    </div>
-                    </div> -->
-            <div class="nav-01__item dropdown">
-                  <li class="nav-01__item"><a class="button   button--white-outline  button--empty "><span>Presentations</span></a>
-                    <div id="myDropdown" class="dropdown-content">
-                      <a href="https://www.dropbox.com/s/yiv0677gpcjybux/talk_INRIA_8_11_2017.pdf?dl=0" target="_blank">SparkinData ML for Agriculture</a>
-                      <a href="https://www.dropbox.com/s/ly54eybr320kklo/thesis_defense_16_9_2016.pdf?dl=0" target="_blank">fMRI Analysis ML for Helath</a>
-                      <a href="https://www.dropbox.com/s/uzsgz88np5inlgn/phi_week_presentation.pdf?dl=0" target="_blank">Parcel Delineation DL ESA Phi Week</a>
+      <span>Presentations</span></a>
+     <div id="myDropdown" class="dropdown-content">
+       <a href="https://www.dropbox.com/s/yiv0677gpcjybux/talk_INRIA_8_11_2017.pdf?dl=0" target="_blank">SparkinData ML for Agriculture</a>
+       <a href="https://www.dropbox.com/s/ly54eybr320kklo/thesis_defense_16_9_2016.pdf?dl=0" target="_blank">fMRI Analysis ML for Helath</a>
+       <a href="https://www.dropbox.com/s/uzsgz88np5inlgn/phi_week_presentation.pdf?dl=0" target="_blank">Parcel Delineation DL ESA Phi Week</a>
 
-                      <!--<a href="#contact">Parcel Delineation SPOT 6 Demo2</a>
-                      <a href="#contact">LCLU Classification</a>
-                      <a href="#contact">Change Detection in Vineyards</a>
-                      <a href="#contact">Deep Learning LAI Estimation</a>
-                      <a href="#contact">Temporal Monitoring of Crops using S2</a>
-                      <a href="#contact">Hemodynamic Brain Parcellation in fMRI</a>
-                    </div>
-                    </div>
-                         -->
-
-            <!-- <!li class="nav-01__item"><a class="button   button--white-outline " href="javascript:void(0);" target="_blank"><span>Sign Up</span></a> -->
-            <!-- </li> -->
-          </ul>
-          <div class="nav-01__burger">
-            <button class="burger js-open-menu" type="button">
-              <div class="burger__box">
-                <div class="burger__inner"></div>
-              </div>
-            </button>
-          </div>
-        </div>
-      </div>
     </div>
+    </li>
+  </ul>
+  </div>
   </nav>
-  <!-- ===== END OF: Nav 1-->
-  <div class="container container--mid header-29__container">
-    <div class="header-29__text_box">
-      <h2 class="heading text-white">AI for EO and Health Applications</h2>
-      <p class="text-white">Hemodynamic Brain Parcellation, LCLU Classification, Parcel Delineation, Change Detection, Crop Anomaly Detection and Temporal Monitoring, Biophysical and Vegetation Parameters</p>
-    </div>
-    <div class="header-29__buttons">
-      <div class="buttons-set">
-        <ul class="buttons-set__list">
-          <li class="buttons-set__item"><a class="button javascript:void(0); button--white-bg  " href="https://scholar.google.fr/citations?user=2jQrOi8AAAAJ&hl=en" target="_blank"><span>Google Scholar</span></a>
-          </li>
-          <li class="buttons-set__item"><a class="button   button--accent-bg " href="https://www.linkedin.com/in/mohanad-albughdadi/" target="_blank"><span>LinkedIn</span></a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</header>
-<!-- ===== END OF: Header 29-->
-<!-- START OF: Features 2 =====-->
-<div class="features-02">
-  <div class="container container--small">
-    <div class="title-box title-box--center">
-      <!-- <h2 class="heading">Created by Makers for Makers</h2> -->
-      <!-- <p class="title-box__text">Try enameling the red wine steaks with bloody peanut sauce and salsa verde, steamed.</p> -->
-    </div>
-  </div>
-  <div class="container">
-    <ul class="features-02__items">
-      <li class="features-02__item">
-        <div class="features-02__item_box">
-          <!-- <div class="features-02__number">40%<span class="features-02__word">bigger</span></div> -->
-          <!-- <p class="features-02__description">Lettuce can be blended with packaged ground beef, also try mash uping the mousse with cream.</p> -->
-        </div>
-      </li>
-      <li class="features-02__item">
-        <div class="features-02__item_box">
-          <!-- <div class="features-02__number">20%<span class="features-02__word">cooler</span></div> -->
-          <!-- <p class="features-02__description">Leek can be mixed with grey rice, also try decorating the fritters with BBQ sauce.</p> -->
-        </div>
-      </li>
-      <li class="features-02__item">
-        <div class="features-02__item_box">
-          <!-- <div class="features-02__number">99.98%<span class="features-02__word">uptime</span></div> -->
-          <!-- <p class="features-02__description">Chicken lard can be decorated with hardened meatballs, also try seasoning the stir-fry with coconut milk.</p> -->
-        </div>
-      </li>
-    </ul>
-  </div>
-</div>
-<!-- ===== END OF: Features 2-->
-<!-- START OF: 02 =====-->
-<div class="text--02">
-  <div class="container container--mid">
-    <div class="text--02__box">
-      <div class="text--02__content_box text--02__content_box--bottom"></div>
-      <div class="text--02__content_box text--02__content_box--top"><img class="text--02__img" src="img/emoji/cheering_megaphone.png"/>
-        <h3>News</h3>
-        <p>I will be presenting Terranis at the ESA Phi-Week for an accepted abstract on parcel delineation using a deep learning approach!</p>
-        <div class="text--02__link_box"><a class="pill-link  pill-link--blue  pill-link--small " href="https://phiweek.esa.int/NikalWebsitePortal/esa-eo-phi-week-2019/phiweek/Agenda/AgendaItemDetail?id=b55801ff-c7d5-4ace-9362-d7a99fe087c6" target="_blank"><span class="pill-link__text">Take a peak at the Phi-Week schedule</span><span class="pill-link__icon"><span class="icon"><svg viewBox="0 0 13 10" xmlns="http://www.w3.org/2000/svg"><path d="M12.823 4.164L8.954.182a.592.592 0 0 0-.854 0 .635.635 0 0 0 0 .88l2.836 2.92H.604A.614.614 0 0 0 0 4.604c0 .344.27.622.604.622h10.332L8.1 8.146a.635.635 0 0 0 0 .88.594.594 0 0 0 .854 0l3.869-3.982a.635.635 0 0 0 0-.88z" fill-rule="nonzero" fill="#00396B"/></svg></span></span></a>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- ===== END OF: 02-->
-<!-- START OF: Photos 02 =====-->
-<!-- <div class="photos-02">
-  <div class="container container--small">
-    <div class="photos-02__title_box">
-      <h1 class="heading">Together We Are Stronger</h1>
-      <p>A falsis, detrius bassus burgus. Fidelis coordinatae nunquam attrahendams hydra est. Talis, velox abactors aegre vitare de clemens, salvus byssus.</p>
-    </div>
-  </div>
-  <div class="photos-02__img_box"><img class="photos-02__img" src="https://images.unsplash.com/photo-1510255182624-e9d7a4647bea?ixlib=rb-0.3.5&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;s=20e222fd2d2008479682f10c9544e339&amp;auto=format&amp;fit=crop&amp;w=1539&amp;q=80"/></div>
-</div> -->
-<!-- ===== END OF: Photos 02-->
-<!-- START OF: Clients 03 =====-->
-<!-- <div class="clients-03">
-  <div class="container container--mid">
-    <ul class="clients-03__list">
-      <li class="clients-03__item"><img class="clients-03__logo" src="img/logos/facebook.svg" height="30"/></li>
-      <li class="clients-03__item"><img class="clients-03__logo" src="img/logos/ibm.svg" height="20"/></li>
-      <li class="clients-03__item"><img class="clients-03__logo" src="img/logos/dribbble.svg" height="30"/></li>
-      <li class="clients-03__item"><img class="clients-03__logo" src="img/logos/microsoft.svg" height="20"/></li>
-      <li class="clients-03__item"><img class="clients-03__logo" src="img/logos/adobe.svg" height="30"/></li>
-      <li class="clients-03__item"><img class="clients-03__logo" src="img/logos/invision.svg" height="30"/></li>
-      <li class="clients-03__item"><img class="clients-03__logo" src="img/logos/virgin.svg" height="40"/></li>
-    </ul>
-  </div>
-</div> -->
-<!-- ===== END OF: Clients 03-->
-<!-- START OF: Button 21 =====-->
-<!-- <div class="cta_button-21">
-  <div class="container container--xsmall">
-    <div class="cta_button-21__button_box"><a class="button   button--accent-bg " href="javascript:void(0);" target="_blank"><span>Sign Up</span></a>
-      <div class="cta_button-21__text">We bring<img class="emoji  " src="img/emoji/shamrock.png" alt="Emoji"/>to teams
-      </div>
-    </div>
-  </div>
-</div> -->
-<!-- ===== END OF: Button 21-->
-<!-- START OF: Links 02 =====-->
-<!-- <div class="links-02">
-  <div class="container container--small">
-    <div class="title-box title-box--center">
-      <h2 class="heading">In the Wild</h2>
-      <p class="title-box__text">Try warming chicken breasts pie enameled with salad cream.</p>
-    </div>
-  </div>
-  <div class="container container--small">
-    <ul class="links-02__list">
-      <li class="links-02__item"><a class="links-02__link" href="javascript:void(0);" target="_blank">Subscribe Our YouTube Channel</a></li>
-      <li class="links-02__item"><a class="links-02__link" href="javascript:void(0);" target="_blank">A Complete Guide to Unicorn Platform</a></li>
-      <li class="links-02__item"><a class="links-02__link" href="javascript:void(0);" target="_blank">10 Reasons Why Static Landing Page is Better That Anything</a></li>
-      <li class="links-02__item"><a class="links-02__link" href="javascript:void(0);" target="_blank">I am a Solofounder and I like it</a></li>
-      <li class="links-02__item"><a class="links-02__link" href="javascript:void(0);" target="_blank">HTML and CSS Basics
-          <div class="link_badge">must read</div></a></li>
-      <li class="links-02__item"><a class="links-02__link" href="javascript:void(0);" target="_blank">Butter and Bread of Any Web Developer</a></li>
-    </ul>
-    <ul class="links-02__list">
-      <li class="links-02__item"><a class="links-02__link" href="javascript:void(0);" target="_blank">Learn About Us</a></li>
-      <li class="links-02__item"><a class="links-02__link" href="javascript:void(0);" target="_blank">Technical Support</a></li>
-      <li class="links-02__item"><a class="links-02__link" href="javascript:void(0);" target="_blank">Customer Care</a></li>
-    </ul>
-  </div>
-</div> -->
-<!-- ===== END OF: Links 02-->
-<!-- START OF: Footer 01 =====-->
-<!-- <div class="footer-01">
-  <div class="container">
-    <div class="footer-01__wrapper"><a class="footer-01__logo_link" href="javascript:void(0);"><img class="footer-01__logo" src="img/other/logo.svg"/></a>
-      <ul class="footer-01__list">
-        <li class="footer-01__item"><a class="footer-01__link" href="javascript:void(0);" target="_blank">hi@unicornplatform.com</a></li>
-      </ul>
-      <ul class="footer-01__list">
-        <li class="footer-01__item"><a class="footer-01__link footer-01__link--black" href="javascript:void(0);" target="_blank">Sing Up</a></li>
-        <li class="footer-01__item"><a class="footer-01__link footer-01__link--black" href="javascript:void(0);" target="_blank">F.A.Q.</a></li>
-        <li class="footer-01__item"><a class="footer-01__link footer-01__link--black" href="javascript:void(0);" target="_blank">About</a></li>
-      </ul>
-      <ul class="footer-01__list">
-        <li class="footer-01__item"><a class="footer-01__link footer-01__link--black" href="https://twitter.com/unicornplatform" target="_blank">Twitter</a></li>
-        <li class="footer-01__item"><a class="footer-01__link footer-01__link--black" href="https://fb.com/unicornplatform" target="_blank">Facebook</a></li>
-        <li class="footer-01__item"><a class="footer-01__link footer-01__link--black" href="https://www.instagram.com/unicornplatform/" target="_blank">Instagram</a></li>
-      </ul>
-    </div>
-  </div>
-</div> -->
-<!-- ===== END OF: Footer 01-->
-    <!-- This is the root element of the image gallery plugin - PhotoSwipe (https://github.com/dimsemenov/PhotoSwipe)-->
-    <!-- Do not delete it.-->
-    <!-- It's invisible to user.-->
-    <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="pswp__bg"></div>
-      <div class="pswp__scroll-wrap">
-        <div class="pswp__container">
-          <div class="pswp__item"></div>
-          <div class="pswp__item"></div>
-          <div class="pswp__item"></div>
-        </div>
-        <div class="pswp__ui pswp__ui--hidden">
-          <div class="pswp__top-bar">
-            <div class="pswp__counter"></div>
-            <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
-            <button class="pswp__button pswp__button--share" title="Share"></button>
-            <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-            <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
-            <div class="pswp__preloader">
-              <div class="pswp__preloader__icn">
-                <div class="pswp__preloader__cut">
-                  <div class="pswp__preloader__donut"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-            <div class="pswp__share-tooltip"></div>
-          </div>
-          <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
-          <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
-          <div class="pswp__caption">
-            <div class="pswp__caption__center"></div>
-          </div>
-        </div>
-      </div>
-    </div>
 
-    <!-- <div class="via-unicorn-platform">
-      <!-- Thanks for being part of the Unicorn Platform community!-->
-      <!-- Our small team will <em>truly</em> appreciate if you keep this tiny link on your website. It will dramatically help us spearing the magic across the world.-->
-      <!-- <a class="via-unicorn-platform__link" href="https://unicornplatform.com/" target="_blank" title="This page was generated via Unicorn Platform">Page via <b>Unicorn Platform</b></a> -->
-    <!-- </div> -->
-  </body>
+
+<div id="particles">
+
+
+
+
+
+  <div id="intro">
+
+    <h2 style="font-family: 'Syncopate', sans-serif; font-weight: 10;">Mohanad Albughdadi&nbsp<a href="about.html" style="color: white;"><i class="ai ai-cv-square" style="font-size: 1em;"></i></a></h2>
+      <hr style="width: 50%; background-color: #E83951; border-color: #E83951;">
+    <a href="https://www.linkedin.com/in/mohanad-albughdadi/" style="color: white;"><i class="fab fa-linkedin" style="font-size: 2em;"></i></a>
+    &nbsp
+    <a href="https://github.com/AlbughdadiM" style="color: white;"><i class="fab fa-github" style="font-size: 2em;"></i></a>
+    &nbsp
+    <a href="https://scholar.google.fr/citations?user=2jQrOi8AAAAJ&hl=en" style="color: white;"><i class="ai ai-google-scholar-square" style="font-size: 2em;"></i></a>
+    &nbsp
+    <a href="https://www.researchgate.net/profile/Mohanad_Albughdadi" style="color: white;"><i class="ai ai-researchgate-square" style="font-size: 2em;"></i></a>
+
+
+  </div>
+</div>
+
+</body>
 </html>
