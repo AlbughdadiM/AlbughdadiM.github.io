@@ -1,0 +1,481 @@
+
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Crop Use Case &#8212; Data Science for Copernicus Data</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-dropdown.css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Image Use Case" href="image_dataset.html" />
+    <link rel="prev" title="Preliminary Program" href="program.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  <img src="_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Data Science for Copernicus Data</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   Data Science for Copernicus Data
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="program.html">
+   Preliminary Program
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Crop Use Case
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="image_dataset.html">
+   Image Use Case
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="other_usecases.html">
+   AI Applications in Remote Sensing
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/crop_dataset.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dataset-preparation">
+   Dataset Preparation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-inspection-preprocessing-and-visualization">
+   Data Inspection, Preprocessing and Visualization
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#data-inspection">
+     Data Inspection
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#data-preprocessing">
+     Data Preprocessing
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#data-visualization">
+     Data Visualization
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#evaluation-metrics">
+   Evaluation Metrics
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#accuracy">
+     Accuracy
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#confusion-matrix">
+     Confusion Matrix
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#precision">
+     Precision
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#recall">
+     Recall
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#f1-score">
+     F1 Score
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#unsupervised-machine-learning">
+   Unsupervised Machine Learning
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#principal-component-analysis">
+     Principal Component Analysis
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#kmeans-algorithm">
+     KMeans Algorithm
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#supervised-learning">
+   Supervised Learning
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-xgboost-algorithm">
+     The XGBoost algorithm
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-lstm-algorithm">
+     The LSTM algorithm
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references-use-case-1">
+   References Use Case 1
+  </a>
+ </li>
+</ul>
+
+        </nav>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="crop-use-case">
+<h1>Crop Use Case<a class="headerlink" href="#crop-use-case" title="Permalink to this headline">¶</a></h1>
+<p>The objective of this section is to get familarized with manipulating structred data.</p>
+<p><img alt="alt text" src="_images/Modules.jpeg" /></p>
+<div class="section" id="dataset-preparation">
+<h2>Dataset Preparation<a class="headerlink" href="#dataset-preparation" title="Permalink to this headline">¶</a></h2>
+<p>To prepare the crop dataset, follow these steps:</p>
+<ol class="simple">
+<li><p>Download Sentinel-2 images: using <span class="xref myst">the Google Cloud Storage download notebook</span>.</p></li>
+<li><p>Download the Registre Parcellaire Graphique (RPG) of France.</p></li>
+<li><p>Intersect the RPG with the extent of the downloaded Sentinel-2 tile.</p></li>
+<li><p>Preprocess Sentinel-2 images using <span class="xref myst">the Sentinel-2 preprocessing notebook</span>.</p></li>
+<li><p>Exract image features such as the Normalized Difference Vegetation Index (NDVI),  the Green Red Vegetation Index (GRVI), the Green Normalized Difference Water Index (NDWI<sub>GREEN</sub>) using <span class="xref myst">the feature extraction notebook</span>.</p></li>
+<li><p>Compute parcel-level statistics using the image features and the shapefile using <span class="xref myst">the stats estimation notebook</span>.</p></li>
+<li><p>Construct temporal statistics at the parcel-level using <span class="xref myst">the temporal stats notebook</span>.</p></li>
+</ol>
+</div>
+<div class="section" id="data-inspection-preprocessing-and-visualization">
+<h2>Data Inspection, Preprocessing and Visualization<a class="headerlink" href="#data-inspection-preprocessing-and-visualization" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="data-inspection">
+<h3>Data Inspection<a class="headerlink" href="#data-inspection" title="Permalink to this headline">¶</a></h3>
+<p>This step is mandatory in all machine learning experiments. It allows discovering the dataset characterstics, its errors such as missing data in order to be correctly processed. It also allows exploring other properties of the data such as the distribution.</p>
+</div>
+<div class="section" id="data-preprocessing">
+<h3>Data Preprocessing<a class="headerlink" href="#data-preprocessing" title="Permalink to this headline">¶</a></h3>
+<p>One of the most common cases of data preprocessing is missing data handling. Missing data arises in multiple applications due to sensor malfunction, environmental impacts, etc. In remote sensing, missing data are usually caused by cloud coverage. Most of the machine learning classification and regression algorithms do not handle missing data except some algorithms such as the Long Short Term Memory (LSTM).</p>
+<p>Multiple methods exist to handle missing data:</p>
+<ul class="simple">
+<li><p>Mean imputation</p></li>
+</ul>
+<p>This method is considered as the simplest method of missingdata reconstruction. It simply replaces each missing value bythe mean of the observed values remaining for that variable.However, this approach can severely modify the distributionof the missing variable, which may lead to complications suchas underestimating the standard deviation and distortion ofthe relationships between the different variables by pullingcorrelation estimates toward zero.</p>
+<ul class="simple">
+<li><p>Interpolation</p></li>
+</ul>
+<p>Interpolation is a statistical method that uses known values to estimate the unknown ones. Interpolation uses other known values located in the same sequence with the unknown values.</p>
+<ul class="simple">
+<li><p>Least saqures reconstruction</p></li>
+</ul>
+<p>A statistical method to reconstruct missing data that aims at minimizing the energy of the second order deriviative of an observation. It is similar to Spline interpolation and uses known values from the same sequence to estimate the missing ones.</p>
+<ul class="simple">
+<li><p>K-nearest neighbors reconstruction</p></li>
+</ul>
+<p>The kNN reconstruction is an extension of thekNN algorithm, which finds thekmost relevant complete ob-servations using the Euclidean distance and weights the contribution of each observation in the missing data.</p>
+<ul class="simple">
+<li><p>Iterative imputation</p></li>
+<li><p>Gaussian Mixture Models (GMM)</p></li>
+</ul>
+<p><img alt="alt text" src="_images/1.png" /></p>
+<p><em>A dataset that contains missing data</em></p>
+<p><img alt="alt text" src="_images/mean.png" /></p>
+<p><em>Mean imputation</em></p>
+<p><img alt="alt text" src="_images/lsr.png" /></p>
+<p><em>LSR reconstruction</em></p>
+<p><img alt="alt text" src="_images/knn.png" /></p>
+<p><em>KNN reconstruction</em></p>
+</div>
+<div class="section" id="data-visualization">
+<h3>Data Visualization<a class="headerlink" href="#data-visualization" title="Permalink to this headline">¶</a></h3>
+<p>Data visualization is one of the disciplines in data science and analytics tha aims at visually understanding the data in order to discover patterns and trends (“a picture is worth a thousand words”). Python is rich of libraries for data visualization such as matplotlib<sup><a class="reference external" href="#matplotlib">*</a></sup> , Plotly<sup><a class="reference external" href="#plotly">*</a></sup>  and Dash<sup><a class="reference external" href="#dash">*</a></sup>  among others.</p>
+</div>
+</div>
+<div class="section" id="evaluation-metrics">
+<h2>Evaluation Metrics<a class="headerlink" href="#evaluation-metrics" title="Permalink to this headline">¶</a></h2>
+<p>Multiple evaluation metrics can be used to evaluate the performance of clustering, classification and regression algorithms. In what follows, we will focus on some evaluation metrics that can be used to evaluation the performance of classification algorithms, i.e., when ground truth labels are available.</p>
+<div class="section" id="accuracy">
+<h3>Accuracy<a class="headerlink" href="#accuracy" title="Permalink to this headline">¶</a></h3>
+<p>This metric tries to respond to the follow question: what is the proportion of the dataset that is correctly classified?</p>
+<p><img alt="alt text" src="_images/accuracy.png" /></p>
+<p><img alt="alt text" src="_images/accuracy2.png" /></p>
+</div>
+<div class="section" id="confusion-matrix">
+<h3>Confusion Matrix<a class="headerlink" href="#confusion-matrix" title="Permalink to this headline">¶</a></h3>
+<p>A KxK matrix that is used to evaluate the performance of a machine learning model where K is the number of classes. It compares the actual target values with the predicted ones.</p>
+<p><img alt="alt text" src="_images/TP_TN.png" /></p>
+</div>
+<div class="section" id="precision">
+<h3>Precision<a class="headerlink" href="#precision" title="Permalink to this headline">¶</a></h3>
+<p>This metric tries to answer the following question: what proportion of positive identifications is correctly classified?</p>
+<p><img alt="alt text" src="_images/precision.png" /></p>
+</div>
+<div class="section" id="recall">
+<h3>Recall<a class="headerlink" href="#recall" title="Permalink to this headline">¶</a></h3>
+<p>This metric tries to answer the following question:  What proportion of actual positives is identified correctly?</p>
+<p><img alt="alt text" src="_images/recall.png" /></p>
+</div>
+<div class="section" id="f1-score">
+<h3>F1 Score<a class="headerlink" href="#f1-score" title="Permalink to this headline">¶</a></h3>
+<p>It is a metric that ensures the balance between precison and recall</p>
+<p><img alt="alt text" src="_images/f1_score.png" /></p>
+</div>
+</div>
+<div class="section" id="unsupervised-machine-learning">
+<h2>Unsupervised Machine Learning<a class="headerlink" href="#unsupervised-machine-learning" title="Permalink to this headline">¶</a></h2>
+<p>Unsupervised  learning  algorithms  have a very important role in machine learning due to their capabilities in exploring datasets without any prior knowledge (no labels and no assumptions on the underlying distribution of the data). Classic examples of unsupervsied machine learning algorithms are represneted in dimensionality reduction techniques such as the Principal Component Analysis (PCA)<sup><a class="reference external" href="#pca">*</a></sup> and clustering techniques such as the K-means<sup><a class="reference external" href="#kmeans">*</a></sup></p>
+<p><img alt="alt text" src="_images/6_analysenonsupervisee.jpg" /></p>
+<div class="section" id="principal-component-analysis">
+<h3>Principal Component Analysis<a class="headerlink" href="#principal-component-analysis" title="Permalink to this headline">¶</a></h3>
+<p>A technique that aims at finding the dimensions (principal components) that maximizes the variance of the dataset (global structure). The steps of PCA can be summarized as follow:</p>
+<ul class="simple">
+<li><p>Standarize the dataset by substracting the mean and dividing by the standard deviation.</p></li>
+<li><p>Estimate the Eigen values and Eigen vectors from the covariance matrix or the correlation matrix.</p></li>
+<li><p>Sort the Eigen vectors in a descending order using their corresponding Eigen values.</p></li>
+<li><p>Select K vectors with the highest Eigen values.</p></li>
+<li><p>Construct the projection matrix from these Eigen vectors.</p></li>
+<li><p>Transfrom the standarized dataset using the projection matrix.</p></li>
+</ul>
+</div>
+<div class="section" id="kmeans-algorithm">
+<h3>KMeans Algorithm<a class="headerlink" href="#kmeans-algorithm" title="Permalink to this headline">¶</a></h3>
+<p>The KMeans is an unsupervised algorithm used for data clustering. Clustering is the process of finding the natural grouping in a dataset without any prior assumption on the distribution of the dataset. The KMeans algorithm aims at partioning a set of observations into <span class="math notranslate nohighlight">\(k\)</span> clusters, which if fixed apriori. Each observation is assigned to the cluster whose mean (center) is the closest to this observation. Hence, the KMeans algorithm aims at minimizing the intra-cluster distance. The following figures is an intuitive explanation of the KMeans algorithm.</p>
+<p><img alt="alt text" src="_images/iteration_before.png" /></p>
+<p><em>A set of observations to be clustered using the KMeans algorithm</em></p>
+<p><img alt="alt text" src="_images/iteration_init.png" /></p>
+<p><em>Two centers are randomly initialized</em></p>
+<p><img alt="alt text" src="_images/iteration.png" /></p>
+<p><em>Observations are assigend to clusters whose centers are the closest to the observations</em></p>
+<p><img alt="alt text" src="_images/iteration_centers.png" /></p>
+<p><em>The cluster centers are estimated by computing the mean of all the observations that belong to the same cluster</em></p>
+</div>
+</div>
+<div class="section" id="supervised-learning">
+<h2>Supervised Learning<a class="headerlink" href="#supervised-learning" title="Permalink to this headline">¶</a></h2>
+<p>Supervised algorithms learn a mapping function from input variables(training samples) and output continuous or discrete variables y (such as labels) of the form y = f (X). The main objective is to obtain an accurate approximation of the mapping function in order to predict the output for new input data. Many supervised classification algorithms have been studied in the literature for the determination of this mapping function. One can mention the k-nearest neighbors (kNN), the multi-class support vector machines (SVM), the classification and regression tree (CART), the random forest (RF), the extreme gradient boosting (XGBoost) algorithms. Neural networks algorithms are also used for supervised learning tasks. One of the interesting neural networks algorithms for time series is the longs short term memory (LSTM) algorithm. In what follows, we will concentrate on the XGBoost and LSTM algorithms.</p>
+<p><img alt="alt text" src="_images/7_classificationsupervisee.jpg" /></p>
+<div class="section" id="the-xgboost-algorithm">
+<h3>The XGBoost algorithm<a class="headerlink" href="#the-xgboost-algorithm" title="Permalink to this headline">¶</a></h3>
+<p>Boosting algorithms are a type of learning techniques working sequentially in order to improve the prediction accuracy. In this kind of algorithms, a series of weak classifiers are combined where a single classifier is constructed at each time. Each classifier focuses on the errors of the previous one by giving higher weights to the misclassified samples. Let us assume a binary classification problem, i.e., two classes, with 5 positive and 5 negative samples. A first weak classifier (D1) is constructed. The classifier D1 managed to
+correctly classify two positive samples (in the blue area) and 5 positive examples (in the red area). However, 3 of the positive examples were misclassified. Hence, these 3 samples were assigned higher weights than other samples and would be the focus of the next classifier, namely D2. Similar to D1, D2 managed to correctly classify the samples of interest (those associated with higher weights after D1), but three negative examples (in the blue area) were misclassified and would be assigned higher weights to be the focus of D3. Similarly, D3 managed to classify the samples of interest, but it also misclassified other samples (1 negative and 2 positive samples). A combination of the three classifiers (an ensemble of classifiers) would manage to classify all the samples correctly.</p>
+<p><img alt="alt text" src="_images/xgboost_illustrate.png" /></p>
+</div>
+<div class="section" id="the-lstm-algorithm">
+<h3>The LSTM algorithm<a class="headerlink" href="#the-lstm-algorithm" title="Permalink to this headline">¶</a></h3>
+<p>It is a special type of the Recurrent Neural Networks (RNN). In an RNN model, each time step is processed separatly as time steps are not processed all together. The output of a memory unit at a time step t (state (t+1)) is forwarded to the memory unit processing t+1. The output of t+1 is a combination of the input and the state. However, the RNN  can’t keep memory of old states due to numerical problems (vanishing gradient).</p>
+<p><img alt="alt text" src="_images/RNN.png" /></p>
+<p>The LSTM algorithm solves the previous problem by proposing the carry track that allows propagating old states. The carry at t is then computed using the input and output at t as well as the carry at t-1.</p>
+<p><img alt="alt text" src="_images/LSTM.png" /></p>
+<p>In RNN each time step is processed separately and the time steps are not processed all together.
+The output of a memory unit at a time step t (state (t+1)) is forwarded to the memory unit processing t+1. The output of t+1 is a combination of the input and the state.</p>
+</div>
+</div>
+<div class="section" id="references-use-case-1">
+<h2>References Use Case 1<a class="headerlink" href="#references-use-case-1" title="Permalink to this headline">¶</a></h2>
+<p><a name="matplotlib">*</a> https://matplotlib.org/</p>
+<p><a name="plotly">*</a> https://plotly.com/</p>
+<p><a name="dash">*</a> https://plotly.com/dash/</p>
+<p><a name="pca">*</a> http://www.stats.org.uk/pca/Pearson1901.pdf</p>
+<p><a name="kmeans">*</a> https://sites.cs.ucsb.edu/~veronika/MAE/kmeans_LLoyd_Least_Squares_Quantization_in_PCM.pdf</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="program.html" title="previous page">Preliminary Program</a>
+    <a class='right-next' id="next-link" href="image_dataset.html" title="next page">Image Use Case</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Mohanad Albughdadi<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="_static/js/index.js"></script>
+    
+  </body>
+</html>

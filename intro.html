@@ -1,0 +1,417 @@
+
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data Science for Copernicus Data &#8212; Data Science for Copernicus Data</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-dropdown.css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Preliminary Program" href="program.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  <img src="_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Data Science for Copernicus Data</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="#">
+   Data Science for Copernicus Data
+  </a>
+ </li>
+</ul>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="program.html">
+   Preliminary Program
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="crop_dataset.html">
+   Crop Use Case
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="image_dataset.html">
+   Image Use Case
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="other_usecases.html">
+   AI Applications in Remote Sensing
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/intro.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#artificial-intelligence-machine-learning-and-deep-learning">
+   Artificial Intelligence, Machine Learning and Deep Learning
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ai">
+     AI
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ml">
+     ML
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dl">
+     DL
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#datasets">
+   Datasets
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#prerequisites">
+   Prerequisites
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#technical-environment">
+   Technical environment
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#use-cases">
+   Use cases
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#crop-dataset">
+     Crop dataset
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#context">
+       Context
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#educational-objectives">
+       Educational objectives
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sentinel-2-image-dataset">
+     Sentinel-2 image dataset
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id1">
+       Context
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id2">
+       Educational objectives
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   References
+  </a>
+ </li>
+</ul>
+
+        </nav>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="data-science-for-copernicus-data">
+<h1>Data Science for Copernicus Data<a class="headerlink" href="#data-science-for-copernicus-data" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="artificial-intelligence-machine-learning-and-deep-learning">
+<h2>Artificial Intelligence, Machine Learning and Deep Learning<a class="headerlink" href="#artificial-intelligence-machine-learning-and-deep-learning" title="Permalink to this headline">¶</a></h2>
+<p><img alt="alt text" src="_images/AI_ML_DL.png" /></p>
+<div class="section" id="ai">
+<h3>AI<a class="headerlink" href="#ai" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Human intelligence by machines.</p></li>
+<li><p>Started in the 1950s.</p></li>
+<li><p>The umbrella that includes ML and DL but also non-learning methods such as hard-coded rules (symbolic AI).</p></li>
+<li><p>First AI chess programs are considered as symbolic AI.</p></li>
+<li><p>Symbolic AI is adapted to solve well defined problems such as chess. However, it was proved intractable for more complex challenges such as computer vision, natural language processing, etc. The later motivated ML.</p></li>
+</ul>
+</div>
+<div class="section" id="ml">
+<h3>ML<a class="headerlink" href="#ml" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>“Machine learning arises from this question: could a computer go beyond “what we know how to order it to perform” and learn on its own how to perform a specified task?”<sup><a class="reference external" href="#dl_python">*</a></sup></p></li>
+</ul>
+<p><img alt="alt text" src="_images/symbolic_ai.png" /></p>
+<p><em>Symbolic AI</em></p>
+<p><img alt="alt text" src="_images/ml_ai.png" /></p>
+<p><em>Machine learning</em></p>
+<ul class="simple">
+<li><p>An ML is trained and not hard-coded.</p></li>
+</ul>
+</div>
+<div class="section" id="dl">
+<h3>DL<a class="headerlink" href="#dl" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>DL models learn successive layers of increasingly meaningful representations (that’s why they are deep).</p></li>
+<li><p>DL models are able to learn useful representations from the data and require less feature engineering when compared to classical machine learning models.</p></li>
+<li><p>No evidence that DL models perform like human brain.</p></li>
+</ul>
+<p><img alt="alt text" src="_images/dl_ai.png" /></p>
+</div>
+</div>
+<div class="section" id="datasets">
+<h2>Datasets<a class="headerlink" href="#datasets" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Sentinel-2 images coming from one of the DIAS environments.</p></li>
+<li><p>Vector dataset coming from the Registre Parcellaire Graphique of France.</p></li>
+</ol>
+</div>
+<div class="section" id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Basic knowledge in python programming language.</p></li>
+<li><p>knowledge in GIS.</p></li>
+</ol>
+</div>
+<div class="section" id="technical-environment">
+<h2>Technical environment<a class="headerlink" href="#technical-environment" title="Permalink to this headline">¶</a></h2>
+<p>Ubuntu, Python, Numpy, GDAL, Tifffile, rasterio, rasterstats, Scikit-learn, Tensorflow, Keras, XGBoost, Google SDK, Matplotlib, Plotly, Dash, Pandas, Geopandas, Jupyter</p>
+</div>
+<div class="section" id="use-cases">
+<h2>Use cases<a class="headerlink" href="#use-cases" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="crop-dataset">
+<h3>Crop dataset<a class="headerlink" href="#crop-dataset" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="context">
+<h4>Context<a class="headerlink" href="#context" title="Permalink to this headline">¶</a></h4>
+<p>This use case aims at introducing the participants to the application machine learning techniques on structured datasets. The dataset is constructed using a vector dataset (shapefile) and a temporal series of Sentinel-2 images. The vector dataset contains field boundaries from the French database (RGP) of different crop types. Various machine learning techniques are then applied to the constructed dataset in order to detect anomalies on a specific crop type and classify multiple crop types.</p>
+</div>
+<div class="section" id="educational-objectives">
+<h4>Educational objectives<a class="headerlink" href="#educational-objectives" title="Permalink to this headline">¶</a></h4>
+<p>After this use case, the participants will be able to:</p>
+<ul class="simple">
+<li><p>Prepare datasets using multiple data sources such as vector datasets and satellite images.</p></li>
+<li><p>Extract features using a prior knowledge related to the use case or using machine learning.</p></li>
+<li><p>Select a proper preprocessing technique to clean the dataset.</p></li>
+<li><p>Use visualization tools to explore the dataset before any further processing.</p></li>
+<li><p>Learn the differences between machine learning algorithms and select the one that fits their application.</p></li>
+<li><p>Prepare a training dataset that will allow them to use it for training machine learning algorithms.</p></li>
+<li><p>Train machine learning models to perform classification and regression tasks and use best practices for cross validation and parameters tuning.</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="sentinel-2-image-dataset">
+<h3>Sentinel-2 image dataset<a class="headerlink" href="#sentinel-2-image-dataset" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id1">
+<h4>Context<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
+<p>This use case introduces the participants to the application of machine learning and deep learning techniques on satellite images. The application will focus on semantic image segmentation on Sentinel-2 images.</p>
+</div>
+<div class="section" id="id2">
+<h4>Educational objectives<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
+<p>After this use case, the participants will be able to:</p>
+<ul class="simple">
+<li><p>Learn the differences between machine learning and deep learning models for image segmentation.</p></li>
+<li><p>Prepare datasets that are adapted for machine learning and deep learning models training.</p></li>
+<li><p>Train machine learning and deep learning models for image segmentation with cross validation and parameters tuning.</p></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section" id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<p><a name="dl_python">*</a> http://faculty.neu.edu.cn/yury/AAI/Textbook/Deep%20Learning%20with%20Python.pdf</p>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='right-next' id="next-link" href="program.html" title="next page">Preliminary Program</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Mohanad Albughdadi<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="_static/js/index.js"></script>
+    
+  </body>
+</html>
