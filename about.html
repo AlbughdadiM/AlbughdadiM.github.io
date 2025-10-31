@@ -1,276 +1,613 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mohanad Albughdadi — CV / Portfolio</title>
     <meta name="description"
-        content="Mohanad Albughdadi's portfolio showcasing expertise in AI, Remote Sensing, and Machine Learning.">
-    <meta name="author" content="Mohanad Albughdadi">
-    <title>Mohanad Albughdadi - Portfolio</title>
-    <link rel="stylesheet" href="assets/css/styles-cv.css">
+        content="CV of Mohanad Albughdadi — Google Cloud ML Engineer, PhD in Statistical Machine Learning, AI & Remote Sensing Expert." />
+
+    <!-- Open Graph / Twitter -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Mohanad Albughdadi — CV / Portfolio" />
+    <meta property="og:description" content="Google Cloud ML Engineer · Remote Sensing · Earth Observation." />
+    <meta property="og:image" content="assets/imgs/perso.jpg" />
+    <meta property="og:url" content="https://albughdadim.github.io/cv" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+
+    <!-- Styles (matching portfolio) -->
+    <style>
+        :root {
+            --bg: #0a0d14;
+            --bg-soft: #0f1523;
+            --card: #0f1523cc;
+            --text: #e8eefc;
+            --muted: #a7b0c6;
+            --border: rgba(255, 255, 255, .08);
+            --brand-1: #06b6d4;
+            --brand-2: #60a5fa;
+            --ring: rgba(6, 182, 212, .45);
+            --radius: 18px;
+            --shadow: 0 20px 40px rgba(0, 0, 0, .35);
+            --glow: 0 0 40px 10px rgba(96, 165, 250, .16);
+            --particle-1: rgba(6, 182, 212, .2);
+            --particle-2: rgba(96, 165, 250, .18);
+        }
+
+        [data-theme="light"] {
+            --bg: #f6f7fb;
+            --bg-soft: #ffffff;
+            --card: rgba(255, 255, 255, .7);
+            --text: #0f172a;
+            --muted: #475569;
+            --border: rgba(2, 6, 23, .08);
+            --brand-1: #0ea5e9;
+            --brand-2: #6366f1;
+            --ring: rgba(14, 165, 233, .35);
+            --shadow: 0 12px 24px rgba(2, 6, 23, .08);
+            --glow: 0 0 30px 8px rgba(99, 102, 241, .14);
+            --particle-1: rgba(14, 165, 233, .16);
+            --particle-2: rgba(99, 102, 241, .14);
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        html,
+        body {
+            height: 100%
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Poppins', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji';
+            color: var(--text);
+            background: radial-gradient(1200px 800px at 10% -10%, rgba(6, 182, 212, .12), transparent 50%),
+                radial-gradient(1000px 700px at 110% 10%, rgba(96, 165, 250, .12), transparent 40%),
+                linear-gradient(180deg, var(--bg) 0%, var(--bg-soft) 100%);
+            line-height: 1.65;
+            -webkit-font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
+        }
+
+        a {
+            color: var(--brand-2);
+            text-decoration: none
+        }
+
+        a:hover {
+            text-decoration: underline
+        }
+
+        img {
+            max-width: 100%;
+            height: auto
+        }
+
+        .container {
+            width: min(1100px, 92%);
+            margin: 0 auto
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 30;
+            background: linear-gradient(to bottom, rgba(10, 13, 20, .85), rgba(10, 13, 20, .55));
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border)
+        }
+
+        .topbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 14px 0;
+            gap: 14px
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 700;
+            letter-spacing: .2px
+        }
+
+        .brand img {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: var(--shadow)
+        }
+
+        .brand span {
+            background: linear-gradient(90deg, var(--brand-1), var(--brand-2));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 18px;
+            margin: 0;
+            padding: 0;
+            align-items: center
+        }
+
+        nav a {
+            color: var(--text);
+            font-weight: 500;
+            padding: 8px 10px;
+            border-radius: 10px
+        }
+
+        nav a:focus-visible,
+        .btn:focus-visible {
+            outline: 3px solid var(--ring);
+            outline-offset: 2px;
+            border-radius: 12px
+        }
+
+        /* Hero */
+        .hero {
+            padding: 64px 0 24px;
+            position: relative
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            inset: -40px 0 auto;
+            height: 240px;
+            background:
+                radial-gradient(600px 240px at 20% 10%, rgba(6, 182, 212, .18), transparent 60%),
+                radial-gradient(700px 260px at 80% 0%, rgba(96, 165, 250, .16), transparent 60%);
+            filter: blur(20px);
+            pointer-events: none;
+            z-index: -1
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 28px;
+            align-items: center
+        }
+
+        .title {
+            font-size: clamp(30px, 4vw, 54px);
+            line-height: 1.15;
+            margin: 6px 0 12px
+        }
+
+        .grad {
+            background: linear-gradient(90deg, var(--brand-1), var(--brand-2));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent
+        }
+
+        .subtitle {
+            color: var(--muted);
+            margin: 0;
+            font-size: clamp(14px, 1.5vw, 18px)
+        }
+
+        .cta {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 16px
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 14px;
+            border-radius: 14px;
+            border: 1px solid var(--border);
+            background: var(--card);
+            backdrop-filter: blur(10px);
+            box-shadow: var(--shadow);
+            color: var(--text);
+            text-decoration: none
+        }
+
+        .btn.primary {
+            background: linear-gradient(90deg, var(--brand-1), var(--brand-2));
+            color: #fff;
+            border: none;
+            box-shadow: var(--glow)
+        }
+
+        /* Snapshot panel tuned to profile size */
+        .panel {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 16px
+        }
+
+        .snapshot {
+            width: 280px;
+            min-width: 260px;
+            max-width: 320px;
+            align-self: start
+        }
+
+        .snapshot h3 {
+            margin: 0 0 6px
+        }
+
+        .pill {
+            display: inline-block;
+            font-size: 12px;
+            padding: 6px 10px;
+            border-radius: 999px;
+            border: 1px solid var(--border);
+            background: rgba(255, 255, 255, .04);
+            margin: 4px 6px 0 0
+        }
+
+        /* Sections */
+        main {
+            padding-bottom: 64px
+        }
+
+        .section {
+            padding: 18px 0 42px
+        }
+
+        .section h2 {
+            font-size: clamp(20px, 2.2vw, 28px);
+            margin: 0 0 14px
+        }
+
+        /* Grids */
+        .grid {
+            display: grid;
+            gap: 18px;
+            grid-template-columns: 1.2fr .8fr
+        }
+
+        @media(max-width:980px) {
+            .grid {
+                grid-template-columns: 1fr
+            }
+
+            .hero-grid {
+                grid-template-columns: 1fr
+            }
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative
+        }
+
+        .timeline::before {
+            content: "";
+            position: absolute;
+            left: 9px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(180deg, var(--brand-1), var(--brand-2));
+            opacity: .55
+        }
+
+        .item {
+            position: relative;
+            padding-left: 28px;
+            margin: 18px 0
+        }
+
+        .item::before {
+            content: "";
+            position: absolute;
+            left: 2px;
+            top: 6px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: linear-gradient(180deg, var(--brand-1), var(--brand-2));
+            box-shadow: 0 0 0 3px rgba(255, 255, 255, .06)
+        }
+
+        .role {
+            font-weight: 600
+        }
+
+        .place {
+            color: var(--muted)
+        }
+
+        .dates {
+            font-size: 13px;
+            color: var(--muted)
+        }
+
+        ul.clean {
+            padding-left: 18px;
+            margin: 8px 0 0
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 24px 0 36px;
+            color: var(--muted);
+            text-align: center
+        }
+
+        /* Particles */
+        #bgParticles {
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            pointer-events: none
+        }
+
+        /* Accessibility */
+        .skip-link {
+            position: absolute;
+            left: -9999px;
+            top: auto;
+            width: 1px;
+            height: 1px;
+            overflow: hidden
+        }
+
+        .skip-link:focus {
+            left: 12px;
+            top: 12px;
+            width: auto;
+            height: auto;
+            background: var(--card);
+            color: var(--text);
+            padding: 10px 14px;
+            border-radius: 10px;
+            border: 1px solid var(--border);
+            z-index: 999
+        }
+
+        @media(prefers-reduced-motion:reduce) {
+            * {
+                transition: none !important;
+                animation: none !important
+            }
+        }
+    </style>
 </head>
 
 <body>
+    <canvas id="bgParticles" aria-hidden="true"></canvas>
+    <a href="#main" class="skip-link">Skip to content</a>
+
     <header>
-        <div class="container">
-            <h1>Mohanad Albughdadi</h1>
-            <p>Certified Google Cloud ML Engineer | PhD in Statistical Machine Learning | AI and Remote Sensing Expert
-            </p>
+        <div class="container topbar">
+            <a class="brand" href="/">
+                <img src="assets/imgs/perso.jpg" alt="Portrait of Mohanad Albughdadi" width="88" height="88"
+                    loading="eager" />
+                <span>Mohanad Albughdadi</span>
+            </a>
+            <nav aria-label="Primary">
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#work">Work</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#accomplishments">Accomplishments</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#languages">Languages</a></li>
+                    <li>
+                        <button id="themeToggle" class="btn" type="button" title="Toggle theme"
+                            aria-label="Toggle theme">
+                            <i class="fa-solid fa-circle-half-stroke" aria-hidden="true"></i>
+                        </button>
+                    </li>
+                </ul>
+            </nav>
         </div>
     </header>
 
-    <nav>
-        <div class="container">
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#work-history">Work History</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#accomplishments">Accomplishments</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#languages">Languages</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <main>
-        <section id="about">
-            <div class="container">
-                <h2>About</h2>
-                <article>
-                    <p>I am a Certified Google Cloud ML Engineer with a PhD in Statistical Machine Learning for Medical
-                        Image
-                        Analysis and a Postdoc in Artificial Intelligence applied to Remote Sensing. With over 11 years
-                        of
-                        combined academic and industrial experience, I have contributed to national and European-funded
-                        research projects as well as delivered AI-driven business solutions. My expertise lies in
-                        applying
-                        AI to Earth Observation (EO) and cloud computing, bridging research innovation with practical,
-                        real-world applications. I have also shared my knowledge through training sessions and
-                        workshops.
-                        Passionate about tackling complex challenges with AI, I am always eager to learn and embrace new
-                        opportunities.</p>
-                </article>
+    <main id="main" class="container">
+        <!-- Hero -->
+        <section class="hero">
+            <div class="hero-grid">
+                <div>
+                    <h1 class="title"><span class="grad">AI & Remote Sensing</span> Specialist</h1>
+                    <p class="subtitle">Certified Google Cloud ML Engineer · PhD in Statistical Machine Learning · Earth
+                        Observation</p>
+                    <div class="cta">
+                        <a class="btn primary" href="mailto:mohanad.usm@gmail.com"><i
+                                class="fa-solid fa-paper-plane"></i> Contact</a>
+                        <a class="btn" href="https://linkedin.com/in/mohanad-albughdadi" target="_blank"
+                            rel="noopener">LinkedIn</a>
+                        <a class="btn" href="assets/cv.pdf" target="_blank" rel="noopener"><i
+                                class="fa-solid fa-file-arrow-down"></i> Download CV</a>
+                    </div>
+                </div>
+                <aside class="panel snapshot">
+                    <h3>Snapshot</h3>
+                    <p class="muted">11+ years across academia and industry, building ML for EO: self-supervision,
+                        segmentation, object detection, and cloud-native geospatial systems.</p>
+                    <div>
+                        <span class="pill">Google Cloud</span>
+                        <span class="pill">Self-Supervised Learning</span>
+                        <span class="pill">Foundation Models</span>
+                        <span class="pill">STAC</span>
+                    </div>
+                </aside>
             </div>
         </section>
 
-        <section id="work-history">
-            <div class="container">
-                <h2>Work History</h2>
-                <div class="card-container">
+        <!-- About & Contact side-by-side -->
+        <section id="about" class="section">
+            <div class="grid">
+                <article class="panel">
+                    <h2>About</h2>
+                    <p>I am a Certified Google Cloud ML Engineer with a PhD in Statistical Machine Learning for medical
+                        image analysis and postdoctoral work in AI for Remote Sensing. I bridge research and real-world
+                        impact by applying machine learning to Earth Observation and cloud computing. I also teach and
+                        run workshops at events like IGARSS and EGU.</p>
+                </article>
+                <aside class="panel">
+                    <h2>Contact</h2>
+                    <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/mohanad-albughdadi" target="_blank"
+                            rel="noopener">mohanad-albughdadi</a><br />
+                        <strong>Website:</strong> <a href="https://albughdadim.github.io" target="_blank"
+                            rel="noopener">albughdadim.github.io</a>
+                    </p>
+                </aside>
+            </div>
+        </section>
 
-                    <div class="card">
-                        <article>
-                            <h3>Scientist for Machine Learning</h3>
-                            <p><strong>European Center for Medium Weather Range Forecasts, Bonn, Germany (2022-12 –
-                                    Current)</strong></p>
-                            <p class="dates">Dec 2022 - Present</p>
-                            <ul>
-                                <li>Managing activities for European Commission (EC) projects, including stakeholder
-                                    engagement, technology transfer, and report preparation.</li>
-                                <li>Developing and implementing self-supervised learning pipelines for downstream tasks
-                                    using EO data.</li>
-                                <li>Contributing to the development of machine learning models for data volume reduction
-                                    and
-                                    efficient data transfer within the EO4EU ecosystem.</li>
-                                <li>Designing ML models for object detection, prompt segmentation of very
-                                    high-resolution
-                                    satellite imagery, and super-resolution for Sentinel-2 and ERA-5 datasets.</li>
-                                <li>Implement and integrate models on the AI-on-Demand platform, the one-stop shop for
-                                    AI
-                                    practitioners in Europe in the framework of AI4Copernicus and DeployAI.</li>
-                                <li>Delivering training sessions, presentations, and organizing workshops at
-                                    conferences,
-                                    including IGARSS and EGU, enhancing technical knowledge-sharing within the
-                                    community.
-                                </li>
-                                <li>Collaborating with ECMWF and interdisciplinary teams to drive project success.</li>
-                                <li>Building STAC catalogs using the STAC tools ecosystem to make data produced in the
-                                    projects accessible, interoperable, and discoverable.</li>
-                            </ul>
-                        </article>
+        <!-- Work History -->
+        <section id="work" class="section">
+            <h2>Work History</h2>
+            <div class="panel timeline">
+                <div class="item">
+                    <h3 class="role">Scientist, Machine Learning</h3>
+                    <div class="place"><strong>ECMWF — Bonn, Germany</strong> · <span class="dates">Dec 2022 –
+                            Present</span></div>
+                    <ul class="clean">
+                        <li>Lead activities on EC projects: stakeholder engagement, tech transfer, reporting.</li>
+                        <li>Build self-supervised learning pipelines for EO downstream tasks.</li>
+                        <li>Design ML for data volume reduction & efficient transfer in EO4EU.</li>
+                        <li>Develop object detection, promptable segmentation (VHR imagery), and super-resolution
+                            (Sentinel‑2, ERA‑5).</li>
+                        <li>Integrate models on AI-on-Demand for AI4Copernicus & DeployAI.</li>
+                        <li>Deliver trainings and workshops (IGARSS, EGU), and build STAC catalogs for interoperable
+                            data access.</li>
+                    </ul>
+                </div>
+                <div class="item">
+                    <h3 class="role">Head of AI & Digital</h3>
+                    <div class="place"><strong>TerraNIS SAS — Ramonville-Saint-Agne, France</strong> · <span
+                            class="dates">Jan 2020 – Nov 2022</span></div>
+                    <ul class="clean">
+                        <li>Applied AI to EO for illicit crop detection and swimming pool identification.</li>
+                        <li>Managed EC projects and partnered with academia for agriculture & viticulture.</li>
+                        <li>Delivered AI training programs; mentored a team of three engineers.</li>
+                        <li>Built cloud-native processing workflows for scalable EO analytics.</li>
+                    </ul>
+                </div>
+                <div class="item">
+                    <h3 class="role">Expert Engineer, Signal & Image Processing</h3>
+                    <div class="place"><strong>TerraNIS SAS — Ramonville-Saint-Agne, France</strong> · <span
+                            class="dates">Feb 2018 – Dec 2019</span></div>
+                    <ul class="clean">
+                        <li>Land use classification, change detection, field boundaries, LAI/biophysical estimation,
+                            forest detection, semantic mapping.</li>
+                        <li>Processing chains for Sentinel‑2 and anomaly detection for crop monitoring.</li>
+                    </ul>
+                </div>
+                <div class="item">
+                    <h3 class="role">Postdoctoral Researcher</h3>
+                    <div class="place"><strong>IRIT — Toulouse, France</strong> · <span class="dates">Oct 2016 – Dec
+                            2017</span></div>
+                    <ul class="clean">
+                        <li>ML on satellite-derived data for agriculture (anomaly detection, crop classification).</li>
+                        <li>Lab instruction for advanced signal processing projects.</li>
+                    </ul>
+                </div>
+                <div class="item">
+                    <h3 class="role">PhD Researcher & Lab Instructor</h3>
+                    <div class="place"><strong>INPT / IRIT / ENSEEIHT — Toulouse, France</strong> · <span
+                            class="dates">Sep 2013 – Sep 2016</span></div>
+                    <ul class="clean">
+                        <li>Bayesian and clustering methods for task-based fMRI: activity detection, dynamics,
+                            segmentation.</li>
+                    </ul>
+                </div>
+                <div class="item">
+                    <h3 class="role">Monitoring & Evaluation Officer</h3>
+                    <div class="place"><strong>PCDCR — Gaza</strong> · <span class="dates">Jan 2012 – Sep 2013</span>
                     </div>
-
-                    <div class="card">
-                        <article>
-                            <h3>Head of Artificial Intelligence and Digital</h3>
-                            <p><strong>TerraNIS SAS, Ramonville-Saint-Agne, FRANCE (2020-01 – 2022-11)</strong></p>
-                            <p class="dates">Jan 2020 - Nov 2022</p>
-                            <ul>
-                                <li>Leveraged AI to extract value from EO data, including applications in illicit crop
-                                    detection and swimming pool identification from satellite imagery.</li>
-                                <li>Managed EC projects and fostered collaboration with academic institutions on AI
-                                    applications in agriculture and viticulture.</li>
-                                <li>Designed and delivered AI training sessions to diverse audiences, enhancing
-                                    skillsets in
-                                    EO and machine learning.</li>
-                                <li>Supervised and mentored a team of three engineers, ensuring efficient project
-                                    execution
-                                    and technical excellence.</li>
-                                <li>Developed cloud-based image processing workflows for EO data analysis, optimizing
-                                    performance and scalability.</li>
-                            </ul>
-                        </article>
+                    <ul class="clean">
+                        <li>Oversaw compliance of 16 donor-funded projects (UNICEF, UNDP, Save the Children, NRC).</li>
+                        <li>Quantitative/qualitative analysis and bilingual reporting (EN/AR).</li>
+                    </ul>
+                </div>
+                <div class="item">
+                    <h3 class="role">Executive Manager & Network Engineer</h3>
+                    <div class="place"><strong>Toot ICT — Gaza</strong> · <span class="dates">Jan 2010 – Jun 2010</span>
                     </div>
-
-                    <div class="card">
-                        <article>
-                            <h3>Expert Engineer in Signal and Image Processing</h3>
-                            <p><strong>TerraNIS SAS, Ramonville-Saint-Agne, FRANCE (2018-02 - 2019-12)</strong></p>
-                            <p class="dates">Feb 2018 - Dec 2019</p>
-                            <ul>
-                                <li>Applied AI and machine learning techniques to satellite imagery for tasks including
-                                    land
-                                    use classification, change detection, field boundary delineation, biophysical
-                                    parameter
-                                    estimation, forest detection, and semantic classification.</li>
-                                <li>Designed and implemented processing chains for Sentinel-2 data and developed anomaly
-                                    detection methods for crop monitoring.</li>
-                            </ul>
-                        </article>
-                    </div>
-
-                    <div class="card">
-                        <article>
-                            <h3>PostDoc Researcher</h3>
-                            <p><strong>Toulouse Research Institute of Computer Science, IRIT, Toulouse, FRANCE (2016-10
-                                    -
-                                    2017-12)</strong></p>
-                            <p class="dates">Oct 2016 - Dec 2017</p>
-                            <ul>
-                                <li>Applied machine learning techniques to satellite-derived data for agricultural
-                                    applications, including anomaly detection and crop classification.</li>
-                                <li>Served as a lab instructor for an advanced signal processing project, mentoring
-                                    students
-                                    in practical applications of signal and data analysis.</li>
-                            </ul>
-                        </article>
-                    </div>
-
-                    <div class="card">
-                        <article>
-                            <h3>PhD Researcher and Lab Instructor</h3>
-                            <p><strong>National Polytechnic Institute of Toulouse, INPT, IRIT, ENSEEIHT, Toulouse,
-                                    FRANCE
-                                    (2013-09 - 2016-09)</strong></p>
-                            <p class="dates">Sep 2013 - Sep 2016</p>
-                            <ul>
-                                <li>Applied Bayesian methods and cluster analysis techniques to task-related fMRI data
-                                    to
-                                    detect brain activity, estimate dynamics, and segment brain regions.</li>
-                                <li>Served as a lab instructor for an advanced signal processing project.</li>
-                            </ul>
-                        </article>
-                    </div>
-
-                    <div class="card">
-                        <article>
-                            <h3>Monitoring and Evaluation Officer</h3>
-                            <p><strong>Palestinian Center for Democracy and Conflict Resolution, Gaza (2012-01 –
-                                    2013-09)</strong></p>
-                            <p class="dates">Jan 2012 - Sep 2013</p>
-                            <ul>
-                                <li>Ensured successful execution and compliance with donor requirements of 16 projects
-                                    funded by organizations including UNICEF, UNDP, Save the Children, and NRC.</li>
-                                <li>Collected, analyzed, and interpreted quantitative and qualitative data to support
-                                    project evaluation and decision-making.</li>
-                                <li>Prepared detailed bilingual reports (English and Arabic) for donors, presenting
-                                    findings
-                                    and actionable insights.</li>
-                            </ul>
-                        </article>
-                    </div>
-
-                    <div class="card">
-                        <article>
-                            <h3>Executive Manager and Network Engineer</h3>
-                            <p><strong>Toot Information and Communication Technology, Gaza (2010-01 - 2010-06)</strong>
-                            </p>
-                            <p class="dates">Jan 2010 - Jun 2010</p>
-                            <ul>
-                                <li>Oversaw budgetary planning, business development, and operational strategies to
-                                    drive
-                                    growth.</li>
-                                <li>Administered and installed wired and wireless network systems, ensuring reliable and
-                                    efficient connectivity.</li>
-                            </ul>
-                        </article>
-                    </div>
-
+                    <ul class="clean">
+                        <li>Budgeting, business development, and operations.</li>
+                        <li>Deployed wired/wireless networks for reliable connectivity.</li>
+                    </ul>
                 </div>
             </div>
         </section>
 
-
-        <section id="education">
-            <div class="container">
-                <h2>Education</h2>
-                <article>
-                    <ul>
-                        <li>Certified Professional Machine Learning Engineer, Google Cloud (2022-02)</li>
-                        <li>Ph.D.: Medical Image Processing (Applied Math), National Polytechnic Institute of Toulouse,
-                            France (2013-09 – 2016-09)</li>
-                        <li>Master of Science: Electronic Systems Design Engineering, University of Science Malaysia
-                            (2010-06 – 2011-06)</li>
-                    </ul>
-                </article>
-            </div>
-        </section>
-
-        <section id="accomplishments">
-            <div class="container">
-                <h2>Accomplishments</h2>
-                <article>
-                    <ul>
-                        <li>Authored and co-authored multiple scientific journal and conference papers (<a
-                                href="https://scholar.google.fr/citations?user=2jQrOi8AAAAJ&hl">Google Scholar</a>).
+        <!-- Education / Languages -->
+        <section id="education" class="section">
+            <div class="grid">
+                <article class="panel">
+                    <h2>Education</h2>
+                    <ul class="clean">
+                        <li>Google Cloud — <strong>Certified Professional Machine Learning Engineer</strong> (Feb 2022)
                         </li>
-                        <li>Winner of the MyEUSpace competition with Imaginearth team (2022).</li>
-                        <li>Served as a PC member and reviewer for various conferences and journals.</li>
+                        <li>PhD — <strong>Medical Image Processing (Applied Math)</strong>, INPT, Toulouse (2013 – 2016)
+                        </li>
+                        <li>MSc — <strong>Electronic Systems Design Engineering</strong>, Universiti Sains Malaysia
+                            (2010 – 2011)</li>
                     </ul>
+                </article>
+                <article id="languages" class="panel">
+                    <h2>Languages</h2>
+                    <p class="muted">English · French · Arabic</p>
                 </article>
             </div>
         </section>
 
-        <section id="contact">
-            <div class="container">
-                <h2>Contact</h2>
-                <article>
-                    <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/mohanad-albughdadi"
-                            target="_blank">mohanad-albughdadi</a></p>
-                    <p><strong>Website:</strong> <a href="https://albughdadim.github.io"
-                            target="_blank">albughdadim.github.io</a></p>
-                </article>
-            </div>
-        </section>
-
-        <section id="skills">
-            <div class="container">
-                <h2>Skills</h2>
-                <article>
-                    <ul>
-                        <li>ML/DL, Computer Vision, Python, Pytorch, Tensorflow, Keras, Scikit-learn, OpenCV</li>
-                        <li>Data/Geodata Visualization</li>
-                        <li>Docker, Kubernetes, Kubeflow, MLOps, Google Cloud Platform</li>
-                        <li>FastAPI, Flask</li>
-                        <li>STAC, QGIS, PostgreSQL, DuckDB</li>
-                        <li>Git, Gitlab CI/CD, Github Actions</li>
-                        <li>Linux, Windows, MacOS</li>
+        <!-- Accomplishments / Skills -->
+        <section id="accomplishments" class="section">
+            <div class="grid">
+                <article class="panel">
+                    <h2>Accomplishments</h2>
+                    <ul class="clean">
+                        <li>Author & co-author of journal and conference papers (<a
+                                href="https://scholar.google.fr/citations?user=2jQrOi8AAAAJ&hl" target="_blank"
+                                rel="noopener">Google Scholar</a>).</li>
+                        <li>Winner — <strong>MyEUSpace</strong> with Imaginearth team (2022).</li>
+                        <li>Program committee member & reviewer for conferences/journals.</li>
+                        <li>Best Student Award in Msc of ESDE at USM 2010/2011.</li>
                     </ul>
                 </article>
-            </div>
-        </section>
-
-        <section id="languages">
-            <div class="container">
-                <h2>Languages</h2>
-                <article>
-                    <ul>
-                        <li>English</li>
-                        <li>French</li>
-                        <li>Arabic</li>
-                    </ul>
+                <article id="skills" class="panel">
+                    <h2>Skills</h2>
+                    <div>
+                        <span class="pill">ML/DL</span><span class="pill">Computer Vision</span><span
+                            class="pill">Python</span>
+                        <span class="pill">PyTorch</span><span class="pill">TensorFlow</span><span
+                            class="pill">Keras</span>
+                        <span class="pill">scikit-learn</span><span class="pill">OpenCV</span><span
+                            class="pill">Visualization</span>
+                        <span class="pill">Docker</span><span class="pill">Kubernetes</span><span
+                            class="pill">Kubeflow</span>
+                        <span class="pill">MLOps</span><span class="pill">GCP</span><span class="pill">FastAPI</span>
+                        <span class="pill">Flask</span><span class="pill">STAC</span><span class="pill">QGIS</span>
+                        <span class="pill">PostgreSQL</span><span class="pill">DuckDB</span><span
+                            class="pill">Git</span>
+                        <span class="pill">CI/CD</span><span class="pill">Linux</span><span
+                            class="pill">macOS</span><span class="pill">Windows</span>
+                    </div>
                 </article>
             </div>
         </section>
@@ -278,9 +615,29 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 Mohanad Albughdadi</p>
+            <p>© <span id="year">2025</span> Mohanad Albughdadi</p>
         </div>
     </footer>
+
+    <!-- Scripts: theme, particles -->
+    <script>
+        // Year
+        document.getElementById('year').textContent = new Date().getFullYear();
+        // Theme toggle
+        const root = document.documentElement; const themeBtn = document.getElementById('themeToggle'); const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'light') root.setAttribute('data-theme', 'light');
+        themeBtn?.addEventListener('click', () => { const isLight = root.getAttribute('data-theme') === 'light'; if (isLight) { root.removeAttribute('data-theme'); localStorage.setItem('theme', 'dark'); } else { root.setAttribute('data-theme', 'light'); localStorage.setItem('theme', 'light'); } initParticles(true); });
+        // Particles
+        const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const canvas = document.getElementById('bgParticles'); const ctx = canvas.getContext('2d'); let rafId, particles = [], cfg = { count: 70, maxSpeed: 0.25, size: [1, 2.2], linkDist: 110 };
+        function rand(min, max) { return Math.random() * (max - min) + min } function pick(arr) { return arr[(Math.random() * arr.length) | 0] }
+        function resize() { const dpr = Math.max(1, Math.min(window.devicePixelRatio || 1, 2)); canvas.width = Math.floor(innerWidth * dpr); canvas.height = Math.floor(innerHeight * dpr); canvas.style.width = innerWidth + 'px'; canvas.style.height = innerHeight + 'px'; ctx.setTransform(dpr, 0, 0, dpr, 0, 0); }
+        function getTint() { const s = getComputedStyle(document.documentElement); return [s.getPropertyValue('--particle-1').trim(), s.getPropertyValue('--particle-2').trim()]; }
+        function initParticles(reset = false) { resize(); const [c1, c2] = getTint(); if (reset) particles = []; const target = innerWidth < 700 ? Math.round(cfg.count * 0.55) : cfg.count; while (particles.length < target) { particles.push({ x: Math.random() * innerWidth, y: Math.random() * innerHeight, vx: rand(-cfg.maxSpeed, cfg.maxSpeed), vy: rand(-cfg.maxSpeed, cfg.maxSpeed), r: rand(cfg.size[0], cfg.size[1]), c: Math.random() < 0.5 ? c1 : c2 }); } }
+        function step() { ctx.clearRect(0, 0, canvas.width, canvas.height); const [c1, c2] = getTint(); for (const p of particles) { p.x += p.vx; p.y += p.vy; if (p.x < -10 || p.x > innerWidth + 10) p.vx *= -1; if (p.y < -10 || p.y > innerHeight + 10) p.vy *= -1; ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2); ctx.fillStyle = p.c; ctx.fill(); } for (let i = 0; i < particles.length; i++) { for (let j = i + 1; j < particles.length; j++) { const a = particles[i], b = particles[j]; const dx = a.x - b.x, dy = a.y - b.y, d = Math.hypot(dx, dy); if (d < cfg.linkDist) { ctx.globalAlpha = 1 - d / cfg.linkDist; ctx.strokeStyle = pick([c1, c2]); ctx.lineWidth = 1; ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke(); ctx.globalAlpha = 1; } } } rafId = requestAnimationFrame(step); }
+        function start() { if (prefersReduced) { ctx.clearRect(0, 0, canvas.width, canvas.height); return; } cancelAnimationFrame(rafId); initParticles(true); step(); }
+        window.addEventListener('resize', resize); document.addEventListener('visibilitychange', () => { if (document.hidden) cancelAnimationFrame(rafId); else step(); }); start();
+    </script>
 </body>
 
 </html>

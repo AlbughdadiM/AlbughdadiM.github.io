@@ -1,185 +1,912 @@
-<!DOCTYPE HTML>
+<!doctype html>
 <html lang="en">
 
 <head>
+    <!--
+      Enhanced, accessible, and SEO-friendly portfolio page for Mohanad Albughdadi
+      - Fixed JSON-LD syntax & content
+      - Improved copy + typos corrected
+      - Better semantics (header/nav/main/section/article/figure/figcaption)
+      - Accessible dropdown & keyboard navigation
+      - Lazy-loaded, responsive images
+      - Open Graph / Twitter cards
+      - Small, modern CSS with CSS variables
+    -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mohanad Albughdadi — AI & Remote Sensing Expert</title>
+    <meta name="description"
+        content="Portfolio of Mohanad Albughdadi, AI & Remote Sensing specialist: machine learning for Earth Observation, satellite image analysis, and cloud-native geospatial systems." />
+    <link rel="canonical" href="https://albughdadim.github.io/" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Mohanad Albughdadi — AI & Remote Sensing Expert" />
+    <meta property="og:description"
+        content="Machine learning for Earth Observation, satellite image analysis, and cloud geospatial." />
+    <meta property="og:url" content="https://albughdadim.github.io/" />
+    <meta property="og:image" content="assets/imgs/perso.jpg" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Mohanad Albughdadi — AI & Remote Sensing Expert" />
+    <meta name="twitter:description"
+        content="Machine learning for Earth Observation, satellite image analysis, and cloud geospatial." />
+    <meta name="twitter:image" content="assets/imgs/perso.jpg" />
+
+    <meta name="google-site-verification" content="L0PEgmsrFhxPf6ttHECba-PdYA_IFa_x2dlh4L_JhJM" />
+
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+    <!-- Font Awesome 6 -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"
+        integrity="sha512-M1m2Z4S1d8q1+5nTzj3B9c6m3O5tX6mP7m7y6l2k9p0gC7tq0FhH3qvZQ3L0Jf4b9C0gYl2WqM8QzJX9T3w4nA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- JSON-LD (Schema.org) -->
     <script type="application/ld+json">
-        {
-          "@context": "http://schema.org",
-          "@type": "Person",
-          "name": "Mohanad Albughdadi",
-          "jobTitle": "AI & Remote Sensing Expert",
-          "url": "https://albughdadim.github.io",
-          "description": "Mohanad Albughdadi is an AI expert with a focus on Remote Sensing and Earth Observation. With expertise in machine learning, satellite image analysis, and cloud computing.",
-          "sameAs": [
-            "https://www.linkedin.com/in/mohanad-albughdadi",
-            "https://github.com/AlbughdadiM"
-          ],
-          "contactPoint": {
-            "@type": "ContactPoint",
-            "areaServed": "Worldwide",
-            "availableLanguage": ["English","French]",
-            "email": "mohanad.usm@gmail.com"
-          }
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Mohanad Albughdadi",
+      "jobTitle": "AI & Remote Sensing Expert",
+      "url": "https://albughdadim.github.io",
+      "description": "AI expert focused on Remote Sensing and Earth Observation. Expertise in machine learning, satellite image analysis, and cloud computing.",
+      "image": "https://albughdadim.github.io/assets/imgs/perso.jpg",
+      "sameAs": [
+        "https://www.linkedin.com/in/mohanad-albughdadi",
+        "https://github.com/AlbughdadiM",
+        "https://scholar.google.fr/citations?user=2jQrOi8AAAAJ&hl=en",
+        "https://www.researchgate.net/profile/Mohanad_Albughdadi"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "areaServed": "Worldwide",
+        "availableLanguage": ["English", "French"],
+        "email": "mohanad.usm@gmail.com"
+      }
+    }
+    </script>
+
+    <!-- Base styles (small but tasteful) -->
+    <style>
+        :root {
+            /* Mohanad brand palette (Aqua Indigo) */
+            --bg: #0a0d14;
+            --bg-soft: #0f1523;
+            --card: #0f1523cc;
+            /* glass */
+            --text: #e8eefc;
+            --muted: #a7b0c6;
+            --border: rgba(255, 255, 255, .08);
+            --brand-1: #06b6d4;
+            /* cyan-500 */
+            --brand-2: #60a5fa;
+            /* indigo/blue-400 */
+            --ring: rgba(6, 182, 212, .45);
+            --radius: 18px;
+            --shadow: 0 20px 40px rgba(0, 0, 0, .35);
+            --glow: 0 0 40px 10px rgba(96, 165, 250, .16);
+            --particle-1: rgba(6, 182, 212, 0.2);
+            --particle-2: rgba(96, 165, 250, 0.18);
         }
-      </script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="google-site-verification" content="L0PEgmsrFhxPf6ttHECba-PdYA_IFa_x2dlh4L_JhJM">
-    <title>Mohanad Albughdadi - Portfolio</title>
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+        [data-theme="light"] {
+            --bg: #f6f7fb;
+            --bg-soft: #ffffff;
+            --card: rgba(255, 255, 255, .7);
+            --text: #0f172a;
+            --muted: #475569;
+            --border: rgba(2, 6, 23, .08);
+            --brand-1: #0ea5e9;
+            /* sky-500 */
+            --brand-2: #6366f1;
+            /* indigo-500 */
+            --ring: rgba(14, 165, 233, .35);
+            --shadow: 0 12px 24px rgba(2, 6, 23, .08);
+            --glow: 0 0 30px 8px rgba(99, 102, 241, .14);
+            --particle-1: rgba(14, 165, 233, 0.16);
+            --particle-2: rgba(99, 102, 241, 0.14);
+        }
 
-    <!-- FontAwesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        * {
+            box-sizing: border-box;
+        }
 
-    <!-- Custom Styles -->
-    <link rel="stylesheet" href="assets/css/styles.css">
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Poppins', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, 'Helvetica Neue', Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+            color: var(--text);
+            background: radial-gradient(1200px 800px at 10% -10%, rgba(124, 58, 237, .14), transparent 50%),
+                radial-gradient(1000px 700px at 110% 10%, rgba(34, 211, 238, .12), transparent 40%),
+                linear-gradient(180deg, var(--bg) 0%, var(--bg-soft) 100%);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
+        }
+
+        a {
+            color: var(--brand-2);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Layout */
+        .container {
+            width: min(1200px, 92%);
+            margin: 0 auto;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 30;
+            background: linear-gradient(to bottom, rgba(10, 13, 20, .85), rgba(10, 13, 20, .55));
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .topbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 14px 0;
+            gap: 14px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 700;
+            letter-spacing: .2px;
+        }
+
+        .brand img {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: var(--shadow);
+            outline: 2px solid transparent;
+        }
+
+        .brand span {
+            background: linear-gradient(90deg, var(--brand-1), var(--brand-2));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 18px;
+            margin: 0;
+            padding: 0;
+            align-items: center;
+        }
+
+        nav a {
+            color: var(--text);
+            font-weight: 500;
+            padding: 8px 10px;
+            border-radius: 10px;
+        }
+
+        nav a:focus-visible,
+        .btn:focus-visible {
+            outline: 3px solid var(--ring);
+            outline-offset: 2px;
+            border-radius: 12px;
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-toggle {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            right: 0;
+            top: calc(100% + 8px);
+            min-width: 300px;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 8px;
+            box-shadow: var(--shadow);
+            display: none;
+            backdrop-filter: blur(12px);
+        }
+
+        .dropdown-menu a {
+            display: block;
+            padding: 10px 12px;
+            border-radius: 12px;
+            color: var(--text);
+        }
+
+        .dropdown-menu a:hover {
+            background: rgba(255, 255, 255, .06);
+            text-decoration: none;
+        }
+
+        .dropdown:focus-within .dropdown-menu,
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        /* Hero */
+        .hero {
+            padding: 64px 0 28px;
+            position: relative;
+        }
+
+        .hero::before {
+            /* soft glow */
+            content: "";
+            position: absolute;
+            inset: -40px 0 auto;
+            height: 260px;
+            background: radial-gradient(600px 240px at 20% 10%, rgba(124, 58, 237, .18), transparent 60%),
+                radial-gradient(700px 260px at 80% 0%, rgba(34, 211, 238, .16), transparent 60%);
+            filter: blur(20px);
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.2fr .8fr;
+            gap: 36px;
+            align-items: center;
+        }
+
+        .eyebrow {
+            color: var(--muted);
+            font-weight: 600;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            font-size: 12px;
+        }
+
+        .title {
+            font-size: clamp(34px, 4vw, 56px);
+            line-height: 1.1;
+            margin: 8px 0 10px;
+        }
+
+        .title .grad {
+            background: linear-gradient(90deg, var(--brand-1), var(--brand-2));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .subtitle {
+            color: var(--muted);
+            margin: 10px 0 18px;
+            font-size: clamp(14px, 1.4vw, 18px);
+        }
+
+        .cta {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 14px;
+            border-radius: 14px;
+            border: 1px solid var(--border);
+            background: var(--card);
+            backdrop-filter: blur(10px);
+            box-shadow: var(--shadow);
+            text-decoration: none;
+            color: var(--text);
+        }
+
+        .btn.primary {
+            background: linear-gradient(90deg, var(--brand-1), var(--brand-2));
+            color: white;
+            border: none;
+            box-shadow: var(--glow);
+        }
+
+        .portrait {
+            border-radius: 22px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+
+        .portrait::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border: 1px solid rgba(255, 255, 255, .05);
+            border-radius: 22px;
+            pointer-events: none;
+        }
+
+        /* Sections */
+        .section {
+            padding: 28px 0 80px;
+        }
+
+        .section h2 {
+            font-size: clamp(22px, 2.2vw, 30px);
+            margin: 0 0 16px;
+        }
+
+        /* Projects Grid */
+        .grid {
+            display: grid;
+            gap: 20px;
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        @media (max-width: 980px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 640px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .card {
+            position: relative;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card::before {
+            /* animated gradient ring */
+            content: "";
+            position: absolute;
+            inset: -2px;
+            border-radius: calc(var(--radius) + 2px);
+            background: conic-gradient(from 180deg, var(--brand-1), var(--brand-2), var(--brand-1));
+            mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+            -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            padding: 1.2px;
+            opacity: .0;
+            transition: opacity .25s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 18px 40px rgba(0, 0, 0, .35);
+        }
+
+        .card:hover::before {
+            opacity: .7;
+        }
+
+        .card img {
+            display: block;
+            aspect-ratio: 16/9;
+            object-fit: cover;
+        }
+
+        .body {
+            padding: 16px 16px 18px;
+        }
+
+        .card h3 {
+            margin: 6px 0 10px;
+            font-size: 18px;
+            line-height: 1.35;
+        }
+
+        .card p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+
+        .tag {
+            font-size: 12px;
+            padding: 6px 10px;
+            border-radius: 999px;
+            border: 1px solid var(--border);
+            background: rgba(255, 255, 255, .04);
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 32px 0 44px;
+            color: var(--muted);
+        }
+
+        .social {
+            display: flex;
+            gap: 12px;
+        }
+
+        .icon-btn {
+            width: 40px;
+            height: 40px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, .06);
+            border: 1px solid var(--border);
+        }
+
+        .icon-btn:hover {
+            background: rgba(255, 255, 255, .1);
+        }
+
+        /* Skip link */
+        .skip-link {
+            position: absolute;
+            left: -9999px;
+            top: auto;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+        }
+
+        .skip-link:focus {
+            left: 12px;
+            top: 12px;
+            width: auto;
+            height: auto;
+            background: var(--card);
+            color: var(--text);
+            padding: 10px 14px;
+            border-radius: 10px;
+            border: 1px solid var(--border);
+            z-index: 999;
+        }
+
+        /* Motion preferences */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                transition: none !important;
+                animation: none !important;
+            }
+        }
+
+        /* Particles canvas */
+        #bgParticles {
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            pointer-events: none;
+        }
+    </style>
+
+    <!-- Optional: your external styles & scripts -->
+    <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
 
 <body>
+    <canvas id="bgParticles" aria-hidden="true"></canvas>
+    <a href="#main" class="skip-link">Skip to content</a>
 
-    <div id="page-wrapper">
-        <!-- Header -->
-        <header id="header">
-            <nav id="nav">
+    <header>
+        <div class="container topbar" role="navigation" aria-label="Main">
+            <a class="brand" href="/" aria-label="Home">
+                <img src="assets/imgs/perso.jpg" alt="Portrait of Mohanad Albughdadi" width="88" height="88"
+                    loading="eager" />
+                <span>Mohanad Albughdadi</span>
+            </a>
+            <nav>
                 <ul>
-                    <li><a href="about.html"><i class="fas fa-user"></i> About</a></li>
-                    <li><a href="https://www.linkedin.com/in/mohanad-albughdadi/"><i class="fab fa-linkedin"></i>
-                            LinkedIn</a></li>
-                    <li><a href="https://scholar.google.fr/citations?user=2jQrOi8AAAAJ&hl=en"><i
-                                class="fas fa-chalkboard-teacher"></i> Google Scholar</a></li>
-                    <li><a href="https://www.researchgate.net/profile/Mohanad_Albughdadi"><i
-                                class="fab fa-researchgate"></i> ResearchGate</a></li>
-                    <li><a href="https://github.com/AlbughdadiM"><i class="fab fa-github"></i> GitHub</a></li>
+                    <li><a href="about.html"><i class="fa-solid fa-user"></i> About</a></li>
+                    <li><a href="https://www.linkedin.com/in/mohanad-albughdadi/" target="_blank"
+                            rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i> LinkedIn</a></li>
+                    <li><a href="https://scholar.google.fr/citations?user=2jQrOi8AAAAJ&hl=en" target="_blank"
+                            rel="noopener noreferrer"><i class="fa-solid fa-graduation-cap"></i> Google Scholar</a></li>
+                    <li><a href="https://www.researchgate.net/profile/Mohanad_Albughdadi" target="_blank"
+                            rel="noopener noreferrer"><i class="fa-brands fa-researchgate"></i> ResearchGate</a></li>
+                    <li><a href="https://github.com/AlbughdadiM" target="_blank" rel="noopener noreferrer"><i
+                                class="fa-brands fa-github"></i> GitHub</a></li>
                     <li class="dropdown">
-                        <a href="#"><i class="fab fa-blogger"></i>Blogs</a>
-                        <ul class="dropdown-menu">
-                            <li> <a href="https://training.pages.data.meditwin-project.eu/meditwin-summer-school-2025">
-                                    MediTwin Summer School'25
-                            <li><a href="https://albughdadim.github.io/igarss2024-eo4eu/eo4eu_intro.html">IGARSS
-                                    Tutorial 2024</a></li>
-                            <li><a href="index_training.html">Training Data Science for Copernicus</a></li>
-                            <li><a href="https://medium.com/p/cafbb633f6cd">Kubeflow Pipelines for Earth Observation</a>
-                            </li>
-                        </ul>
+                        <a class="dropdown-toggle" href="#" aria-haspopup="true" aria-expanded="false"><i
+                                class="fa-solid fa-blog"></i> Blogs <i class="fa-solid fa-angle-down"
+                                aria-hidden="true"></i></a>
+                        <div class="dropdown-menu" role="menu" aria-label="Blog links">
+                            <a href="https://training.pages.data.meditwin-project.eu/meditwin-summer-school-2025"
+                                target="_blank" rel="noopener noreferrer">MediTwin Summer School 2025</a>
+                            <a href="https://albughdadim.github.io/igarss2024-eo4eu/eo4eu_intro.html" target="_blank"
+                                rel="noopener noreferrer">IGARSS Tutorial 2024</a>
+                            <a href="index_training.html">Training: Data Science for Copernicus</a>
+                            <a href="https://medium.com/p/cafbb633f6cd" target="_blank"
+                                rel="noopener noreferrer">Kubeflow Pipelines for Earth Observation</a>
+                        </div>
+                    </li>
+                    <li>
+                        <button id="themeToggle" class="btn" type="button" title="Toggle theme"
+                            aria-label="Toggle theme">
+                            <i class="fa-solid fa-circle-half-stroke" aria-hidden="true"></i>
+                        </button>
                     </li>
                 </ul>
             </nav>
-        </header>
+        </div>
+    </header>
 
-        <!-- Banner -->
-        <section id="banner">
-            <div class="content">
-                <header>
-                    <h1 class="main-title">Mohanad Albughdadi</h1>
-                    <p class="subtitle">AI & Remote Sensing Specialist | Google Cloud ML Engineer | Python Expert</p>
-                </header>
-                <span class="image"><img src="assets/imgs/perso.jpg" alt="Mohanad Albughdadi" /></span>
+    <main id="main">
+        <!-- Hero / Banner -->
+        <section class="hero">
+            <div class="container hero-grid">
+                <div>
+                    <div class="eyebrow">Earth Observation · ML</div>
+                    <h1 class="title"><span class="grad">AI & Remote Sensing</span> Specialist</h1>
+                    <p class="subtitle">Google Cloud ML Engineer · Python Expert · AI for EO ·
+                        Cloud‑native geospatial</p>
+                    <div class="cta">
+                        <a class="btn primary" href="mailto:mohanad.usm@gmail.com"><i
+                                class="fa-solid fa-paper-plane"></i> Contact</a>
+                        <a class="btn" href="about.html"><i class="fa-solid fa-circle-info"></i> About me</a>
+                        <a class="btn" href="assets/cv.pdf" target="_blank" rel="noopener"><i
+                                class="fa-solid fa-file-arrow-down"></i> Download CV</a>
+                    </div>
+                </div>
+                <figure class="portrait">
+                    <img src="assets/imgs/perso.jpg" alt="Mohanad Albughdadi portrait" width="800" height="800"
+                        loading="lazy" />
+                </figure>
             </div>
         </section>
 
-        <!-- Projects Section -->
-        <section id="projects">
-            <div class="project-card">
-                <img src="assets/imgs/ex0_top1.png" alt="mixture-of-experts masked autoencoder" class="project-img" />
-                <h2 class="project-title">Lightweight Metadata-Aware Mixture-of-Experts Masked AutoEncoder for EO</h2>
-                <p>Pretrain a lightweight MoE-MAE for EO and use it for downstream tasks in EO.</p>
-            </div>
-            <div class="project-card">
-                <img src="assets/imgs/output_valencia.gif" alt="change detection" class="project-img" />
-                <h2 class="project-title">CLAY Foundation Model for Change Detection</h2>
-                <p>Use CLAY embeddings to detect changes caused of floods using Sentinel-1 and Sentinel-2 data.</p>
-            </div>
-            <div class="project-card">
-                <img src="assets/imgs/carbon.png" alt="STAC deploy" class="project-img" />
-                <h2 class="project-title">Deploy STAC Catalog Services with Docker Compose</h2>
-                <p>Deploy and manage STAC catalog components using a simple Docker Compose setup.</p>
-            </div>
-            <div class="project-card">
-                <img src="assets/imgs/output_asr_s2v.gif" alt="SR" class="project-img" />
-                <h2 class="project-title">Sentinel-2 to Venus Super Resolution</h2>
-                <p>Super resolution of Sentinel-2 to the resolution of CERRA data.</p>
-            </div>
-            <div class="project-card">
-                <img src="assets/imgs/output_asr_t.gif" alt="SR" class="project-img" />
-                <h2 class="project-title">ERA-5 Temperature Super Resolution</h2>
-                <p>Super resolution of ERA-5 temperature to the resolution of CERRA data.</p>
-            </div>
-            <div class="project-card">
-                <img src="assets/imgs/output_asr_ws.gif" alt="SR" class="project-img" />
-                <h2 class="project-title">ERA-5 Windspeed Super Resolution</h2>
-                <p>Super resolution of ERA-5 windspeed to the resolution of CERRA data.</p>
-            </div>
-            <div class="project-card">
-                <img src="assets/imgs/s2-api.png" alt="s2-api" class="project-img" />
-                <h2 class="project-title">Sentinel-2 Processing API</h2>
-                <p>An API based on Docker, Kubernetes, Celery, Redis and Flower to download and process Sentinel-2
-                    images.</p>
-            </div>
-            <div class="project-card">
-                <img src="assets/imgs/yolov8.png" alt="yolov8" class="project-img" />
-                <h2 class="project-title">Object Detection from VHR Satellite/Aerial Images</h2>
-                <p>OBB YOLOv8 object detection from VHR remote sensing images.</p>
-            </div>
-            <div class="project-card">
-                <img src="assets/imgs/sam-dashboard.png" alt="sam-dashboard" class="project-img" />
-                <h2 class="project-title">Prompt Sentinel-2 Image Segmentation using SAM</h2>
-                <p>Interactive segmentationb dashboard of Sentinel-2 images using SAM.</p>
-            </div>
-            <div class="project-card">
-                <img src="assets/imgs/sam-finetune.png" alt="sam-finetune" class="project-img" />
-                <h2 class="project-title">SAM Finetuning for Remote Sensing</h2>
-                <p>Finetune SAM foundation model for downstream tasks in remote sensing.</p>
-            </div>
-            <div class="project-card">
-                <img src="assets/imgs/pd.gif" alt="field-detection" class="project-img" />
-                <h2 class="project-title">Field Boundary Delineation in Sentinel-2 Images</h2>
-                <p>Deep learning-based approach to automate the extraction of field boundaries for precision
-                    agriculture.</p>
-            </div>
+        <!-- Projects -->
+        <section class="section" aria-labelledby="projects-heading">
+            <div class="container">
+                <h2 id="projects-heading">Selected Projects</h2>
+                <div class="grid" role="list">
 
-            <div class="project-card">
-                <img src="assets/imgs/sr1.gif" alt="super-resolution-s2-spot" class="project-img" />
-                <h2 class="project-title">Super Resolved Sentinel-2 Images</h2>
-                <p>Enhancing spatial resolution for Sentinel-2 images to 2.5m.</p>
-            </div>
+                    <article class="card" role="listitem">
+                        <img src="assets/imgs/ex0_top1.png"
+                            alt="Visualization of a Mixture‑of‑Experts Masked Autoencoder for EO" loading="lazy"
+                            width="1280" height="720" />
+                        <div class="body">
+                            <h3>Lightweight Metadata‑Aware Mixture‑of‑Experts MAE for EO</h3>
+                            <p>Pre‑train a lightweight MoE‑MAE for Earth Observation and fine‑tune it for downstream EO
+                                tasks.</p>
+                        </div>
+                    </article>
 
-            <div class="project-card">
-                <img src="assets/imgs/forest_detection.gif" alt="forest-detection" class="project-img" />
-                <h2 class="project-title">Fire Risk Zones Using BDORTHO Images</h2>
-                <p>Mapping fire risk zones through deep learning and satellite imagery to aid disaster management.</p>
-            </div>
+                    <article class="card" role="listitem">
+                        <img src="assets/imgs/output_valencia.gif"
+                            alt="Change detection animation using CLAY embeddings" loading="lazy" width="1280"
+                            height="720" />
+                        <div class="body">
+                            <h3>CLAY Foundation Model for Change Detection</h3>
+                            <p>Use CLAY embeddings to detect flood‑induced changes from Sentinel‑1 and Sentinel‑2 data.
+                            </p>
+                        </div>
+                    </article>
 
-            <div class="project-card">
-                <img src="assets/imgs/lai.gif" alt="lai-estimation" class="project-img" />
-                <h2 class="project-title">Massive LAI Estimation from Sentinel-2</h2>
-                <p>Fast and efficient estimation of Leaf Area Index (LAI) for large areas using deep learning.</p>
-            </div>
+                    <article class="card" role="listitem">
+                        <img src="assets/imgs/carbon.png" alt="STAC services deployment diagram" loading="lazy"
+                            width="1280" height="720" />
+                        <div class="body">
+                            <h3>Deploy STAC Catalog Services with Docker Compose</h3>
+                            <p>Deploy and manage STAC catalog components using a simple, reproducible Docker Compose
+                                setup.</p>
+                        </div>
+                    </article>
 
-            <div class="project-card">
-                <img src="assets/imgs/pool_detection.gif" alt="pool-detection" class="project-img" />
-                <h2 class="project-title">Swimming Pool Detection Using BDORTHO</h2>
-                <p>Leveraging deep learning to detect swimming pools across French communes, supporting circular economy
-                    efforts.</p>
+                    <article class="card" role="listitem">
+                        <img src="assets/imgs/output_asr_s2v.gif" alt="Super‑resolution results for Sentinel‑2 to VENµS"
+                            loading="lazy" width="1280" height="720" />
+                        <div class="body">
+                            <h3>Sentinel‑2 → VENµS Super‑Resolution</h3>
+                            <p>Enhance Sentinel‑2 imagery to 5 m resolution using learning‑based super‑resolution.</p>
+                        </div>
+                    </article>
+
+                    <article class="card" role="listitem">
+                        <img src="assets/imgs/output_asr_t.gif" alt="ERA‑5 temperature super‑resolution visualization"
+                            loading="lazy" width="1280" height="720" />
+                        <div class="body">
+                            <h3>ERA‑5 Temperature Super‑Resolution</h3>
+                            <p>Super‑resolve ERA‑5 temperature fields to match CERRA spatial resolution.</p>
+                        </div>
+                    </article>
+
+                    <article class="card" role="listitem">
+                        <img src="assets/imgs/output_asr_ws.gif" alt="ERA‑5 wind speed super‑resolution visualization"
+                            loading="lazy" width="1280" height="720" />
+                        <div class="body">
+                            <h3>ERA‑5 Wind Speed Super‑Resolution</h3>
+                            <p>Super‑resolve ERA‑5 wind speed fields to match CERRA spatial resolution.</p>
+                        </div>
+                    </article>
+
+                    <article class="card" role="listitem">
+                        <img src="assets/imgs/s2-api.png" alt="Sentinel‑2 processing API dashboard" loading="lazy"
+                            width="1280" height="720" />
+                        <div class="body">
+                            <h3>Sentinel‑2 Processing API</h3>
+                            <p>Cloud‑native API with Docker, Kubernetes, Celery, Redis, and Flower to download and
+                                process Sentinel‑2 imagery.</p>
+                        </div>
+                    </article>
+
+                    <article class="card" role="listitem">
+                        <img src="assets/imgs/yolov8.png" alt="YOLOv8 oriented bounding box detection on aerial imagery"
+                            loading="lazy" width="1280" height="720" />
+                        <div class="body">
+                            <h3>Object Detection on VHR Satellite/Aerial Images</h3>
+                            <p>Oriented bounding box (OBB) detection with YOLOv8 for very‑high‑resolution remote sensing
+                                imagery.</p>
+                        </div>
+                    </article>
+
+                    <article class="card" role="listitem">
+                        <img src="assets/imgs/sam-dashboard.png" alt="Interactive segmentation dashboard powered by SAM"
+                            loading="lazy" width="1280" height="720" />
+                        <div class="body">
+                            <h3>Promptable Sentinel‑2 Segmentation with SAM</h3>
+                            <p>Interactive segmentation dashboard for Sentinel‑2 imagery using Segment Anything (SAM).
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="card" role="listitem">
+                        <img src="assets/imgs/sam-finetune.png" alt="Fine‑tuning SAM for remote sensing tasks"
+                            loading="lazy" width="1280" height="720" />
+                        <div class="body">
+                            <h3>Fine‑Tuning SAM for Remote Sensing</h3>
+                            <p>Adapt SAM foundation model for downstream remote sensing tasks via efficient fine‑tuning.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="card" role="listitem">
+                        <img src="assets/imgs/pd.gif" alt="Field boundary delineation results" loading="lazy"
+                            width="1280" height="720" />
+                        <div class="body">
+                            <h3>Field Boundary Delineation in Sentinel‑2</h3>
+                            <p>Deep‑learning approach to extract agricultural field boundaries for precision
+                                agriculture.</p>
+                        </div>
+                    </article>
+
+                    <article class="card" role="listitem">
+                        <img src="assets/imgs/sr1.gif" alt="Super‑resolved Sentinel‑2 imagery to 2.5 m" loading="lazy"
+                            width="1280" height="720" />
+                        <div class="body">
+                            <h3>Super‑Resolved Sentinel‑2 Images</h3>
+                            <p>Enhance Sentinel‑2 imagery to 2.5 m resolution using super‑resolution techniques.</p>
+                        </div>
+                    </article>
+
+                    <article class="card" role="listitem">
+                        <img src="assets/imgs/forest_detection.gif" alt="Fire risk mapping with BDORTHO imagery"
+                            loading="lazy" width="1280" height="720" />
+                        <div class="body">
+                            <h3>Fire Risk Zoning Using BDORTHO</h3>
+                            <p>Map fire‑risk zones with deep learning and aerial/satellite imagery to support disaster
+                                management.</p>
+                        </div>
+                    </article>
+
+                    <article class="card" role="listitem">
+                        <img src="assets/imgs/lai.gif" alt="LAI estimation visualization from Sentinel‑2" loading="lazy"
+                            width="1280" height="720" />
+                        <div class="body">
+                            <h3>Large‑Scale LAI Estimation from Sentinel‑2</h3>
+                            <p>Fast, scalable estimation of Leaf Area Index (LAI) over large areas using deep learning.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="card" role="listitem">
+                        <img src="assets/imgs/pool_detection.gif" alt="Swimming pool detection across French communes"
+                            loading="lazy" width="1280" height="720" />
+                        <div class="body">
+                            <h3>Swimming Pool Detection with BDORTHO</h3>
+                            <p>Detect swimming pools across French communes to support circular‑economy initiatives.</p>
+                        </div>
+                    </article>
+
+                </div>
             </div>
         </section>
+    </main>
 
-        <!-- Footer -->
-        <footer id="footer">
-            <ul class="social-icons">
-                <li><a href="https://www.linkedin.com/in/mohanad-albughdadi/" class="fab fa-linkedin"></a></li>
-                <li><a href="https://github.com/AlbughdadiM" class="fab fa-github"></a></li>
-                <li><a href="mailto:mohanad.usm@gmail.com" class="fas fa-envelope"></a></li>
-            </ul>
-            <p>&copy; 2025 Mohanad Albughdadi. All Rights Reserved.</p>
-        </footer>
-    </div>
+    <footer>
+        <div class="container"
+            style="display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap: wrap;">
+            <div class="social" aria-label="Social links">
+                <a class="icon-btn" href="https://www.linkedin.com/in/mohanad-albughdadi/" target="_blank"
+                    rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                <a class="icon-btn" href="https://github.com/AlbughdadiM" target="_blank" rel="noopener noreferrer"
+                    aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                <a class="icon-btn" href="mailto:mohanad.usm@gmail.com" aria-label="Email"><i
+                        class="fa-solid fa-envelope"></i></a>
+            </div>
+            <div>© <span id="year">2025</span> Mohanad Albughdadi. All rights reserved.</div>
+        </div>
+    </footer>
 
-    <!-- Scripts -->
+    <!-- Minimal JS: theme, particles, year, dropdown -->
+    <script>
+        // --- Year ---
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // --- Dropdown a11y (touch) ---
+        const dropdown = document.querySelector('.dropdown');
+        const toggle = document.querySelector('.dropdown-toggle');
+        if (dropdown && toggle) {
+            toggle.addEventListener('click', function (e) {
+                e.preventDefault();
+                const expanded = this.getAttribute('aria-expanded') === 'true';
+                this.setAttribute('aria-expanded', String(!expanded));
+            });
+        }
+
+        // --- Theme toggle (persisted) ---
+        const root = document.documentElement;
+        const themeBtn = document.getElementById('themeToggle');
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'light') root.setAttribute('data-theme', 'light');
+        if (themeBtn) {
+            themeBtn.addEventListener('click', () => {
+                const isLight = root.getAttribute('data-theme') === 'light';
+                if (isLight) {
+                    root.removeAttribute('data-theme');
+                    localStorage.setItem('theme', 'dark');
+                } else {
+                    root.setAttribute('data-theme', 'light');
+                    localStorage.setItem('theme', 'light');
+                }
+                // re-tint particles when theme flips
+                initParticles(true);
+            });
+        }
+
+        // --- Soft animated particles ---
+        const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const canvas = document.getElementById('bgParticles');
+        const ctx = canvas.getContext('2d');
+        let rafId, particles = [], cfg = { count: 70, maxSpeed: 0.25, size: [1, 2.2], linkDist: 110 };
+
+        function rand(min, max) { return Math.random() * (max - min) + min; }
+        function pick(arr) { return arr[(Math.random() * arr.length) | 0]; }
+
+        function resize() {
+            const dpr = Math.max(1, Math.min(window.devicePixelRatio || 1, 2));
+            canvas.width = Math.floor(innerWidth * dpr);
+            canvas.height = Math.floor(innerHeight * dpr);
+            canvas.style.width = innerWidth + 'px';
+            canvas.style.height = innerHeight + 'px';
+            ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        }
+
+        function getTint() {
+            const styles = getComputedStyle(document.documentElement);
+            // derive two rgba tints for particles & links
+            return [styles.getPropertyValue('--particle-1').trim(), styles.getPropertyValue('--particle-2').trim()];
+        }
+
+        function initParticles(reset = false) {
+            resize();
+            const [c1, c2] = getTint();
+            if (reset) particles = [];
+            const target = innerWidth < 700 ? Math.round(cfg.count * 0.55) : cfg.count;
+            while (particles.length < target) {
+                particles.push({
+                    x: Math.random() * innerWidth,
+                    y: Math.random() * innerHeight,
+                    vx: rand(-cfg.maxSpeed, cfg.maxSpeed),
+                    vy: rand(-cfg.maxSpeed, cfg.maxSpeed),
+                    r: rand(cfg.size[0], cfg.size[1]),
+                    c: Math.random() < 0.5 ? c1 : c2
+                });
+            }
+        }
+
+        function step() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            const [c1, c2] = getTint();
+            // update & draw
+            for (const p of particles) {
+                p.x += p.vx; p.y += p.vy;
+                if (p.x < -10 || p.x > innerWidth + 10) p.vx *= -1;
+                if (p.y < -10 || p.y > innerHeight + 10) p.vy *= -1;
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+                ctx.fillStyle = p.c;
+                ctx.fill();
+            }
+            // links
+            for (let i = 0; i < particles.length; i++) {
+                for (let j = i + 1; j < particles.length; j++) {
+                    const a = particles[i], b = particles[j];
+                    const dx = a.x - b.x, dy = a.y - b.y;
+                    const d = Math.hypot(dx, dy);
+                    if (d < cfg.linkDist) {
+                        ctx.globalAlpha = 1 - d / cfg.linkDist;
+                        ctx.strokeStyle = pick([c1, c2]);
+                        ctx.lineWidth = 1;
+                        ctx.beginPath();
+                        ctx.moveTo(a.x, a.y);
+                        ctx.lineTo(b.x, b.y);
+                        ctx.stroke();
+                        ctx.globalAlpha = 1;
+                    }
+                }
+            }
+            rafId = requestAnimationFrame(step);
+        }
+
+        function start() {
+            if (prefersReduced) { ctx.clearRect(0, 0, canvas.width, canvas.height); return; }
+            cancelAnimationFrame(rafId);
+            initParticles(true);
+            step();
+        }
+
+        window.addEventListener('resize', () => { resize(); });
+        document.addEventListener('visibilitychange', () => {
+            if (document.hidden) cancelAnimationFrame(rafId); else step();
+        });
+
+        // kick off
+        start();
+    </script>
+
+    <!-- Your existing scripts (optional) -->
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/main.js"></script>
-
 </body>
 
 </html>
